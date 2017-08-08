@@ -1,0 +1,15 @@
+header, footer {
+    background:white;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    border: 1px solid;
+    a {
+        color: green;
+        text-decoration: none;
+        &:hover {
+            color: blue;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div>
+    <div id="author-content" class="row">
+        <h3>{{comment.author_name}}</h3>
+    </div>
+    <div id="date-content" class="row">
+        <p>{{comment.date}}</p>
+        <a href="#">EDIT</a> 
+    </div>
+    <div id="comment-content" class="row">
+        <div [innerHTML]="comment.content.rendered"></div>
+    </div>
+    <div id="reply-content"class="row">
+        <p> REPLY
+    </div>
+</div>
