@@ -5806,7 +5806,7 @@ header, footer {
   padding-top: 20px;
   border: 1px solid; }
   header a, footer a {
-    color: green;
+    color: red;
     text-decoration: none; }
     header a:hover, footer a:hover {
       color: blue;
