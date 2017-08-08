@@ -27,6 +27,9 @@ class angularjs_wp_theme {
 		if ( !class_exists( 'WP_REST_Response' ) ) {
 		  add_action( 'admin_notices', array( $this, 'apiError' ) );
 		} 
+                if( !class_exists('WP_REST_Menus')){
+                    add_action( 'admin_notices', array( $this, 'apiError' ) );
+                }
 		
 	}
 	function apiError(){
@@ -40,7 +43,7 @@ class angularjs_wp_theme {
 		
 		add_theme_support( 'post-thumbnails' );
 		add_post_type_support( 'page', 'excerpt' );
-		
+                		
 	}
 
 	// REGISTER MENUS
