@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css'],
+  styleUrls: ['./post-list.component.scss'],
   providers: [PostsService]
 })
 export class PostListComponent implements OnInit {

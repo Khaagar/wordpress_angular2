@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
-  styleUrls: ['./comment-list.component.css'],
+  styleUrls: ['./comment-list.component.scss'],
   providers: [CommentsService]
 })
 

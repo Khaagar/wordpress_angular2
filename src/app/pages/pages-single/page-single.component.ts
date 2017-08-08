@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-page-single',
   templateUrl: './page-single.component.html',
-  styleUrls: ['./page-single.component.css'],
+  styleUrls: ['./page-single.component.scss'],
   providers: [PagesService]
 })
 export class PageSingleComponent implements OnInit {

@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-comment-single',
   templateUrl: './comment-single.component.html',
-  styleUrls: ['./comment-single.component.css'],
+  styleUrls: ['./comment-single.component.scss'],
   providers: [CommentsService]
 })
 export class CommentSingleComponent implements OnInit {

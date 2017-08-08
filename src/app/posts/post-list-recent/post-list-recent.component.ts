@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-post-list-recent',
   templateUrl: './post-list-recent.component.html',
-  styleUrls: ['./post-list-recent.component.css'],
+  styleUrls: ['./post-list-recent.component.scss'],
   providers: [PostsService]
 })
 export class PostListRecentComponent implements OnInit {
