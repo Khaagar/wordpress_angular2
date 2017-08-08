@@ -7,7 +7,7 @@ import { CommentListComponent } from '../../comments/comment-list/comment-list.c
 @Component({
   selector: 'app-post-single',
   templateUrl: './post-single.component.html',
-  styleUrls: ['./post-single.component.css'],
+  styleUrls: ['./post-single.component.scss'],
   providers: [PostsService],
   entryComponents: [CommentListComponent]
 })
