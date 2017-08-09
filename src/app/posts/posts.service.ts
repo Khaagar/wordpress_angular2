@@ -15,7 +15,7 @@ export class PostsService {
 
   constructor(private winRef: WindowRef, private http: Http) {
       let wp_info = winRef.nativeWindow;
-      this._wpBase = wp_info.api_url;
+      this._wpBase = wp_info.api_data_url;
   }
 
   getPosts(property, propId): Observable<Post[]> {

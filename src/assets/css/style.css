@@ -5799,17 +5799,37 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-header, footer {
-  background: white;
-  text-transform: uppercase;
-  padding-bottom: 10px;
-  padding-top: 20px;
-  border: 1px solid; }
-  header a, footer a {
-    color: red;
-    text-decoration: none; }
-    header a:hover, footer a:hover {
-      color: blue;
-      text-decoration: none; }
+/*plac3eholder*/
+header {
+  height: 100px;
+  width: 100%; }
+
+.navbar {
+  text-align: center;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 0px;
+  padding-top: 2.25rem;
+  width: 100%;
+  height: 100%; }
+
+.menu-item-container {
+  border: none;
+  border-radius: 0;
+  height: 98%; }
+
+/*plac3eholder*/
+footer {
+  height: 100px;
+  width: 100%;
+  border: 1px solid;
+  padding: 10px;
+  font-size: 11px; }
+
+#contact {
+  text-align: left; }
+
+#footer-menu {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,14 @@
-<p>
-  footer works!
-</p>
+<div id="contact" class="col-md-9">
+  <p>PDMA<br/>
+  F. Hoffmann-La Roche Ltd<br/>
+  Building 1, Room: 14.N639<br/>
+  Grenzacherstrasse 124 CH-4070 Basel<br/>
+  Switzerland</p>
+</div>
+<div id="footer-menu">
+  <ul>
+    <li *ngFor="let item of menu['items']" >
+      <a [routerLink]="[item.object_slug]">{{item.title}}</a>
+    </li>
+  </ul>
+</div>

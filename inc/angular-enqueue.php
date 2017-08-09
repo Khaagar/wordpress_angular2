@@ -45,7 +45,7 @@ class ng2_enqueue {
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/main.bundle.js', array( 'vendor' ), null, true );
 
 		$local_object = array(
-			'api_url'            => rest_get_url_prefix() . '/wp/v2/',
+			'api_data_url'            => rest_get_url_prefix() . '/wp/v2/',
 			'template_directory' => get_template_directory_uri() . '/',
 			'nonce'              => wp_create_nonce( 'wp_rest' ),
 			'is_admin'           => current_user_can( 'administrator' ),
