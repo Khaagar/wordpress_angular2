@@ -18,9 +18,15 @@ export class CommentsService {
       this._wpBase = wp_info.api_url;
   }
 
-  getComments(postId, parentId): Observable<Comment[]> {
+  getCommentsByPostId(postId, parentId): Observable<Comment[]> {
     return this.http 
       .get(this._wpBase + `comments/?post=${postId}`)
+      .map((res: Response) => res.json());
+  }
+
+  getComments(): Observable<Comment[]> {
+    return this.http 
+      .get(this._wpBase + `comments`)
       .map((res: Response) => res.json());
   }
 

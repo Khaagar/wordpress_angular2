@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostListRecentComponent } from './posts/post-list-recent/post-list-recent.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { CommentListRecentComponent } from './comments/comment-list-recent/comment-list-recent.component';
 import { CommentSingleComponent } from './comments/comment-single/comment-single.component';
 
 import { Wpng2RoutingModule } from './app-routing.module';
@@ -35,7 +36,8 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     SidebarComponent,
     PostListRecentComponent,
     CommentListComponent,
-    CommentSingleComponent
+    CommentSingleComponent,
+    CommentListRecentComponent
   ],
   imports: [
     BrowserModule,

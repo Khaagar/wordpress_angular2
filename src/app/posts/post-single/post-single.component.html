@@ -1,5 +1,6 @@
 <div *ngIf="post">
     <h1>{{ post.title.rendered }}</h1>
+     <p>{{ post.date | date:'longDate'}} by <a [routerLink]="['/posts/author', post.author,'']">{{this.author}}</a></p> 
     <div [innerHTML]="post.content.rendered"></div>
     <div class="comments_wrapper">
         <h3>Comments</h3>
