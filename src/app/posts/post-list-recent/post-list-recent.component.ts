@@ -19,7 +19,7 @@ export class PostListRecentComponent implements OnInit {
     this.postsService
       .getPosts(property, slug)
       .subscribe(res => {
-        this.posts = res.slice(0,3);
+        this.posts = res.slice(0,5);
       });
   }
 

@@ -22,7 +22,7 @@ export class CommentListComponent implements OnInit, OnChanges {
 
   getComments(property, slug){
     this.commentsService
-      .getComments(property, slug)
+      .getCommentsByPostId(property, slug)
       .subscribe(res => {
         this.comments = res;
       });

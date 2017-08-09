@@ -28,6 +28,10 @@ export class PostsService {
         return this.http
           .get(this._wpBase + `posts/?filter[tag]=${propId}`)
           .map((res: Response) => res.json());
+      case 'author':
+        return this.http
+          .get(this._wpBase + `posts/?filter[author]=${propId}`)
+          .map((res: Response) => res.json());
       case 'orderby':
         return this.http
           .get(this._wpBase + `posts/?filter[orderby]=${propId}`)
@@ -44,4 +48,12 @@ export class PostsService {
         .get(this._wpBase + `posts/${id}`)
         .map((res: Response) => res.json());
   }
+
+  getPostSlugBy(id): Observable<string> {
+    return this.http
+        .get(this._wpBase + `posts/${id}`)
+        .map((res: Response) => res.json()['title'].rendered);
+
+  }
+
 }
