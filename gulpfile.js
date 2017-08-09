@@ -51,7 +51,7 @@ gulp.task( 'watch', function() {
 gulp.task( 'serve', function() {
 
     gulp.watch( './src/assets/scss/**/*.scss', ['sass'] );
-    exec('ng serve', {maxBuffer: 1024 * 500}, function (err, stdout, stderr) {
+    exec('ng serve --delete-output-path=false', {maxBuffer: 1024 * 500}, function (err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
         cb(err);
