@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   site_title: string;
   menu: Object;
-
+  current: '';
   constructor(private winRef: WindowRef, private menuService: MenuService) {
     
   }
@@ -24,6 +24,11 @@ export class HeaderComponent implements OnInit {
     this.getMenu("header-menu");
   }
 
+  setActive(item){
+    console.log(item);
+    this.current = item;
+  }
+
   getMenu(string){
     return this.menuService.getMenuByName()
       .subscribe(res => {
@@ -32,7 +37,6 @@ export class HeaderComponent implements OnInit {
             this.menu = res;
             console.log(this.menu);
           });
-        
       });
   }
 }

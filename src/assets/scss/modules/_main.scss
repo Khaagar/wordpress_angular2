@@ -1,0 +1,62 @@
+// asd
+
+html,body{
+    margin:0;
+    padding: 0;
+    height: 100%;
+}
+
+.container{
+    min-height:100%;
+    padding:0px;
+}
+
+#content{
+    padding:0;
+    margin:0;
+    margin-bottom:100px;
+}
+
+#more{
+    position:absolute;
+    bottom:15px;
+    right:15px;
+    z-index:10;
+    background-color:transparent;
+    color:white;
+    width:136px;
+    font-weight: bold;
+    border: 2px solid;
+    border-color:white;
+}
+
+#rect{
+    position: absolute;
+    color:white;
+    font-size:24px;
+    font-weight: normal;
+    width:50%;
+    height: 100%;
+    background-color: rgba(15,100, 140, 0.7);
+    padding:50px;
+    #bolded{
+        font-weight: bold;
+    }
+}
+
+#date{
+    position:absolute;
+    color:white;
+    left:15px;
+    bottom:15px;
+    font-size:32px;
+    font-weight: normal;
+}
+
+.carousel-control {
+position: absolute;
+top: 25%; /* pushes the icon in the middle of the height */
+height:50%;
+z-index: 5;
+display: inline-block;
+}

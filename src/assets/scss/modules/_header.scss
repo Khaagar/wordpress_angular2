@@ -3,8 +3,14 @@
 header{
     height:100px;
     width:100%;
+    padding:0px;
+    margin:0px;
 }
 
+.container-fluid{
+    padding:0px;
+    margin:0px;
+}
 .navbar{
     text-align:center;
     background-color:white;
@@ -19,5 +25,9 @@ header{
     border: none;
     border-radius:0;
     height:98%;
+}
+
+.active{
+    font-weight: bold;
 }
 

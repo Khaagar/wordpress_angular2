@@ -21,6 +21,8 @@ import { TagsListComponent } from './tags/tags-list/tags-list.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { MainCarouselComponent } from './main-carousel/main-carousel.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     PostListRecentComponent,
     CommentListComponent,
     CommentSingleComponent,
-    CommentListRecentComponent
+    CommentListRecentComponent,
+    MainCarouselComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

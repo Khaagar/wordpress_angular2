@@ -5802,7 +5802,13 @@ button.close {
 /*plac3eholder*/
 header {
   height: 100px;
-  width: 100%; }
+  width: 100%;
+  padding: 0px;
+  margin: 0px; }
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px; }
 
 .navbar {
   text-align: center;
@@ -5818,18 +5824,97 @@ header {
   border-radius: 0;
   height: 98%; }
 
+.active {
+  font-weight: bold; }
+
 /*plac3eholder*/
 footer {
   height: 100px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
   border: 1px solid;
-  padding: 10px;
+  padding: 0px;
   font-size: 11px; }
 
 #contact {
-  text-align: left; }
+  text-align: left;
+  margin-top: 10px; }
 
 #footer-menu {
-  display: block; }
+  display: block;
+  max-height: 100px; }
+  #footer-menu ul {
+    margin-top: 10px;
+    list-style-type: none; }
+
+#links {
+  height: 60px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-left: 5px;
+  border-left: 1px solid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  #links #google-icon, #links #pdlive-icon {
+    margin: auto;
+    width: 40px;
+    height: 40px; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.container {
+  min-height: 100%;
+  padding: 0px; }
+
+#content {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 100px; }
+
+#more {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
+  background-color: transparent;
+  color: white;
+  width: 136px;
+  font-weight: bold;
+  border: 2px solid;
+  border-color: white; }
+
+#rect {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: normal;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(15, 100, 140, 0.7);
+  padding: 50px; }
+  #rect #bolded {
+    font-weight: bold; }
+
+#date {
+  position: absolute;
+  color: white;
+  left: 15px;
+  bottom: 15px;
+  font-size: 32px;
+  font-weight: normal; }
+
+.carousel-control {
+  position: absolute;
+  top: 25%;
+  /* pushes the icon in the middle of the height */
+  height: 50%;
+  z-index: 5;
+  display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */
