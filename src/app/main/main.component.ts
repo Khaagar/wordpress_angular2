@@ -14,17 +14,12 @@ frontpage: Object;
   constructor(private frontpageService: FrontpageService) { }
 
   ngOnInit() {
-    console.log('jestem111')
     this.getFrontpage();
   }
 
   getFrontpage(){
-    console.log('front func')
     this.frontpageService
     .getFrontpage()
-    .subscribe(res => {
-      console.log('front: ',res);
-      this.frontpage = res;
-    });
+    .subscribe(res => this.frontpage = res);
   }
 }

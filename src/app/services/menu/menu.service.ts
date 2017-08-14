@@ -20,7 +20,7 @@ export class MenuService {
   getMenuByName(name): Observable<any>{
     return this.http
         .get(this._wpBase + `menu-locations/${name}`)
-        .map((res: any) => res.json())
+        .map((res: any) => res.json());
   }
 
   getMenuById(id): Observable<Object>{
