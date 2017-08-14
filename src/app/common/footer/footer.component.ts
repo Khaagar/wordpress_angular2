@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getMenu("header-menu");
+    this.getMenu("header-footer-menu");
   }
 
   getMenu(string){

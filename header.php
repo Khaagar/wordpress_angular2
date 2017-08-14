@@ -9,4 +9,4 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<?php wp_head(); ?>
 </head>
-<body class="col-md-offset-3 col-md-6">
+<body>

@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     let wp_info = this.winRef.nativeWindow;
     this.site_title = wp_info.site_title;
-    this.getMenu("header-menu");
+    this.getMenu("header-footer-menu");
   }
 
   setActive(item){
