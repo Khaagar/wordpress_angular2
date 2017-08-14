@@ -47,8 +47,7 @@ class angularjs_wp_theme {
 
         register_nav_menus(
                 array(
-                    'header-menu' => __('Header Menu'),
-                    'footer-menu' => __('Footer Menu')
+                    'header-footer-menu' => __('Header & Footer Menu'),
                 )
         );
     }
