@@ -115,8 +115,19 @@ class angularjs_wp_theme {
                 'force_activation' => true,
                 'force_deactivation' => false
             ),
+            array(
+                'name' => 'WP REST API Frontpage',
+                'slug' => 'wp-rest-api-frontpage',
+                'source' => get_stylesheet_directory() . '/plugins/wp-rest-api-frontpage.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
         );
 
+        
+        
+        
         /**
          * Array of configuration settings. Amend each line as needed.
          * If you want the default strings to be available under your own theme domain,
