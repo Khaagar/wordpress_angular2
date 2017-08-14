@@ -8,7 +8,7 @@
 
 <div id="footer-menu"  class="col-md-3">
   <ul>
-    <li *ngFor="let item of menu['items']" >
+    <li *ngFor="let item of menu" >
       <a [routerLink]="[item.object_slug]">{{item.title}}</a>
     </li>
   </ul>

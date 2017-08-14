@@ -5,6 +5,7 @@ import { WindowRef } from '../../shared/windowRef';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class MenuService {
@@ -16,10 +17,10 @@ export class MenuService {
   }
 
 
-  getMenuByName(): Observable<Object>{
+  getMenuByName(name): Observable<any>{
     return this.http
-        .get(this._wpBase + `menu-locations`)
-        .map((res: Response) => res.json());
+        .get(this._wpBase + `menu-locations/${name}`)
+        .map((res: any) => res.json())
   }
 
   getMenuById(id): Observable<Object>{

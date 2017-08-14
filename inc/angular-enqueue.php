@@ -46,7 +46,7 @@ class ng2_enqueue {
 
 		$local_object = array(
 			'api_data_url'            => rest_get_url_prefix() . '/wp/v2/',
-                        "api_menus_url"       => rest_get_url_prefix() ."/wp-api-menus/v2/",
+            'api_menus_url'       => rest_get_url_prefix() ."/wp-api-menus/v2/",
 			'template_directory' => get_template_directory_uri() . '/',
 			'nonce'              => wp_create_nonce( 'wp_rest' ),
 			'is_admin'           => current_user_can( 'administrator' ),

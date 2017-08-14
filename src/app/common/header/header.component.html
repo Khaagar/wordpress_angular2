@@ -15,8 +15,8 @@
         
         <div>
         <ul class="nav navbar-nav" >
-            <li class="menu-item-container" *ngFor="let item of menu['items']">
-                <a (click)="setActive(item.object_slug)" [ngClass]="(current==item.object_slug?'active':'')" [routerLink]="[item.object_slug]">{{item.title}}</a>
+            <li class="menu-item-container" *ngFor="let item of menu">
+                <a (click)="setActive(item.title)" [ngClass]="(current==item.title?'active':'')" [routerLink]="[item.object_slug]">{{item.title}}</a>
             </li>
         </ul>
         </div>

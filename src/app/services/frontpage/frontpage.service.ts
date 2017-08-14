@@ -20,5 +20,4 @@ export class FrontpageService {
       .get(this._wpBase + `frontpage`)
       .map((res: Response) => res.json());
   }
-
 }

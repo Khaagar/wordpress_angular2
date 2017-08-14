@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     let wp_info = this.winRef.nativeWindow;
+    console.log(wp_info)
     this.site_title = wp_info.site_title;
     this.getMenu("header-footer-menu");
   }
@@ -30,13 +31,6 @@ export class HeaderComponent implements OnInit {
   }
 
   getMenu(string){
-    return this.menuService.getMenuByName()
-      .subscribe(res => {
-        this.menuService.getMenuById(res[string].ID)
-          .subscribe(res => {
-            this.menu = res;
-            console.log(this.menu);
-          });
-      });
+    this.menuService.getMenuByName(string).subscribe(res => console.log(this.menu = res))
   }
 }

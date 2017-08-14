@@ -21,13 +21,8 @@ export class FooterComponent implements OnInit {
   }
 
   getMenu(string){
-    return this.menuService.getMenuByName()
-      .subscribe(res => {
-        this.menuService.getMenuById(res[string].ID)
-          .subscribe(res => {
-            this.menu = res;
-            console.log(this.menu);
-          });
-      });
+    this.menuService
+      .getMenuByName(string)
+      .subscribe(res => this.menu = res)
   }
 }
