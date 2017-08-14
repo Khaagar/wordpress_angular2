@@ -80,7 +80,7 @@ class angularjs_wp_theme {
                 'source' => get_stylesheet_directory() . '/plugins/rest-filter-master.zip',
                 'required' => true,
                 'force_activation' => true,
-                'force_deactivation' => true
+                'force_deactivation' => false
             ),
             // WP REST API Menus
             array(
@@ -89,8 +89,32 @@ class angularjs_wp_theme {
                 'source' => get_stylesheet_directory() . '/plugins/wp-api-menus.zip',
                 'required' => true,
                 'force_activation' => true,
-                'force_deactivation' => true
-            )
+                'force_deactivation' => false
+            ),
+            array(
+                'name' => 'WordPress Importer',
+                'slug' => 'wordpress-importer',
+                'source' => get_stylesheet_directory() . '/plugins/wordpress-importer.0.6.3.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
+            array(
+                'name' => 'WP Bootstrap Carousel',
+                'slug' => 'wp-bootstrap-carousel',
+                'source' => get_stylesheet_directory() . '/plugins/wp-bootstrap-carousel.0.5.0.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
+            array(
+                'name' => 'Display Posts Shortcode',
+                'slug' => 'display-posts-shortcode',
+                'source' => get_stylesheet_directory() . '/plugins/display-posts-shortcode.2.8.0.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
         );
 
         /**
