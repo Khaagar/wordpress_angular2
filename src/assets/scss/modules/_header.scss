@@ -12,7 +12,6 @@ header{
     margin:0px;
 }
 .navbar{
-    text-align:center;
     background-color:white;
     border:1px solid;
     border-radius: 0px;
@@ -22,6 +21,7 @@ header{
 }
 
 .menu-item-container{
+    align-content: center;
     border: none;
     border-radius:0;
     height:98%;

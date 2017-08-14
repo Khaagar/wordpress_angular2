@@ -5811,7 +5811,6 @@ header {
   margin: 0px; }
 
 .navbar {
-  text-align: center;
   background-color: white;
   border: 1px solid;
   border-radius: 0px;
@@ -5820,6 +5819,8 @@ header {
   height: 100%; }
 
 .menu-item-container {
+  -ms-flex-line-pack: center;
+  align-content: center;
   border: none;
   border-radius: 0;
   height: 98%; }
@@ -5916,5 +5917,13 @@ html, body {
   height: 50%;
   z-index: 5;
   display: inline-block; }
+
+.glyphicon {
+  font-size: 50px; }
+
+#icon-container {
+  display: inline; }
+  #icon-container .icon-item {
+    display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */
