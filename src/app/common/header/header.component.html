@@ -16,7 +16,7 @@
         <div>
         <ul class="nav navbar-nav" >
             <li class="menu-item-container" *ngFor="let item of menu">
-                <a (click)="setActive(item.title)" [ngClass]="(current==item.title?'active':'')" href="{{item.url_relative}}">{{item.title}}</a>
+                <a [ngClass]="(activePage=='/'+item.slug?'active':'')" [routerLink]="[item.slug]">{{item.title}}</a>
             </li>
         </ul>
         </div>

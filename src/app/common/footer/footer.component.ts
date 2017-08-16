@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { WindowRef } from '../../shared/windowRef';
 import { MenuService } from '../../services/menu/menu.service';
 
@@ -10,14 +10,14 @@ import { MenuService } from '../../services/menu/menu.service';
 })
 export class FooterComponent implements OnInit {
 
-  menu: Object;
+  @Input() menu: any;
 
   constructor(private winRef: WindowRef, private menuService: MenuService) {
     
   }
 
   ngOnInit() {
-    this.getMenu("header-footer-menu");
+    // this.getMenu("header-footer-menu");
   }
 
   getMenu(string){

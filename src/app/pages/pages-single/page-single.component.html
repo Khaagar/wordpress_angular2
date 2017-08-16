@@ -1,7 +1,5 @@
-<div *ngIf="page">
-    <h1>{{ page.title.rendered }}</h1>
-    <div [innerHTML]="page.content.rendered"></div>
-</div>
-<div *ngIf="!page">
-    no page found
-</div>
+
+    <h1>{{ page?.title.rendered }}</h1>
+    <div [innerHTML]="page?.content.rendered"></div>
+
+
