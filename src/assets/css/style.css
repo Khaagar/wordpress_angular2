@@ -5898,9 +5898,8 @@ html, body {
   width: 50%;
   height: 100%;
   background-color: rgba(15, 100, 140, 0.7);
-  padding: 50px; }
-  #rect #bolded {
-    font-weight: bold; }
+  padding: 50px;
+  z-index: 99999; }
 
 #date {
   position: absolute;

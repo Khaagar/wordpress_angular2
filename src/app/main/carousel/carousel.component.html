@@ -2,6 +2,12 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item" [ngClass]="(i===0?'active':'')" *ngFor="let item of items; let i = index" [attr.data-index]="i">
+      <div *ngIf="item.caption.rendered" id="rect">
+        <div [innerHtml]="item.caption.rendered"></div>
+      </div>
+      <div *ngIf="item.alt_text" id="date">
+          <h1>{{item.date | date:'MMMM d'}}, {{item.alt_text}}</h1>
+        </div> 
       <img src="{{item.source_url}}" alt="{{item.alt_text">
       <button id="more" class="btn"> more </button>
     </div>

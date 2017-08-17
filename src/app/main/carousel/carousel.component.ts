@@ -20,6 +20,7 @@ export class CarouselComponent implements OnInit {
     this.carouselService
       .getCarouselItems()
       .subscribe(res => {
+        console.log(res)
         this.items = res;
       });
       
