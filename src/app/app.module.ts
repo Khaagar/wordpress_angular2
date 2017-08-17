@@ -19,7 +19,6 @@ import { CategoriesListComponent } from './categories/categories-list/categories
 import { TagsListComponent } from './tags/tags-list/tags-list.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { EventsComponent } from './pages/events/events.component';
 import { HubsComponent } from './pages/hubs/hubs.component';
@@ -38,7 +37,6 @@ import { CarouselComponent } from './main/carousel/carousel.component';
     TagsListComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent,
     PostListRecentComponent,
     CommentListComponent,
     CommentSingleComponent,

@@ -2,7 +2,8 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item" [ngClass]="(i===0?'active':'')" *ngFor="let item of items; let i = index" [attr.data-index]="i">
-      <img src="{{item.source_url}}" alt="Los Angeles">
+      <img src="{{item.source_url}}" alt="{{item.alt_text">
+      <button id="more" class="btn"> more </button>
     </div>
   </div>
 
