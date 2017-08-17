@@ -1,7 +1,3 @@
-<div *ngIf="frontpage">
-    <h1>{{ frontpage.title.rendered }}</h1>
-    <div [innerHTML]="frontpage.content.rendered"></div>
-</div>
-<div *ngIf="!frontpage">
-    no page found
-</div>
+
+    <h1>{{ frontpage?.title.rendered }}</h1>
+    <div [innerHTML]="frontpage?.content.rendered"></div>
