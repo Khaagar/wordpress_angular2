@@ -26,6 +26,7 @@ import { DigitalInitiativesComponent } from './pages/digital-initiatives/digital
 import { KnowledgeComponent } from './pages/knowledge/knowledge.component';
 import { TeamComponent } from './pages/team/team.component';
 import { CarouselComponent } from './main/carousel/carousel.component';
+import { ListComponent } from './pages/shared/list/list.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { CarouselComponent } from './main/carousel/carousel.component';
     DigitalInitiativesComponent,
     KnowledgeComponent,
     TeamComponent,
-    CarouselComponent
+    CarouselComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

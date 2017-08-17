@@ -5899,7 +5899,9 @@ html, body {
   height: 100%;
   background-color: rgba(15, 100, 140, 0.7);
   padding: 50px;
-  z-index: 99999; }
+  padding-top: 100px;
+  padding-bottom: 50px;
+  overflow: hidden; }
 
 #date {
   position: absolute;
@@ -5920,9 +5922,7 @@ html, body {
 .glyphicon {
   font-size: 50px; }
 
-#icon-container {
-  display: inline; }
-  #icon-container .icon-item {
-    display: inline-block; }
+#link-list {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
