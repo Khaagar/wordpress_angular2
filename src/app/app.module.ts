@@ -15,14 +15,18 @@ import { CommentSingleComponent } from './comments/comment-single/comment-single
 
 import { Wpng2RoutingModule } from './app-routing.module';
 import { PostSingleComponent } from './posts/post-single/post-single.component';
-import { PageSingleComponent } from './pages/pages-single/page-single.component';
 import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
 import { TagsListComponent } from './tags/tags-list/tags-list.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
-import { MainCarouselComponent } from './main-carousel/main-carousel.component';
 import { MainComponent } from './main/main.component';
+import { EventsComponent } from './pages/events/events.component';
+import { HubsComponent } from './pages/hubs/hubs.component';
+import { DigitalInitiativesComponent } from './pages/digital-initiatives/digital-initiatives.component';
+import { KnowledgeComponent } from './pages/knowledge/knowledge.component';
+import { TeamComponent } from './pages/team/team.component';
+import { CarouselComponent } from './main/carousel/carousel.component';
 
 
 @NgModule({
@@ -30,7 +34,6 @@ import { MainComponent } from './main/main.component';
     AppComponent,
     PostListComponent,
     PostSingleComponent,
-    PageSingleComponent,
     CategoriesListComponent,
     TagsListComponent,
     HeaderComponent,
@@ -40,8 +43,13 @@ import { MainComponent } from './main/main.component';
     CommentListComponent,
     CommentSingleComponent,
     CommentListRecentComponent,
-    MainCarouselComponent,
-    MainComponent
+    MainComponent,
+    EventsComponent,
+    HubsComponent,
+    DigitalInitiativesComponent,
+    KnowledgeComponent,
+    TeamComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
