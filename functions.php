@@ -8,6 +8,8 @@ require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 
 class angularjs_wp_theme {
 
+const MENU_STRING = "header-footer-menu";
+
     function init() {
 
         add_action('init', array($this, 'register_my_menus'));
@@ -47,7 +49,7 @@ class angularjs_wp_theme {
 
         register_nav_menus(
                 array(
-                    'header-footer-menu' => __('Header & Footer Menu'),
+                    self::MENU_STRING => __('Header & Footer Menu'),
                 )
         );
     }
