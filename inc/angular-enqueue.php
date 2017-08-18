@@ -51,9 +51,10 @@ class ng2_enqueue {
 			'nonce'              => wp_create_nonce( 'wp_rest' ),
 			'is_admin'           => current_user_can( 'administrator' ),
 			'site_title'         => get_bloginfo( 'name' ),
-			'carousel_id'         => 10,
-			'team_id'			=> 11,
+			'carousel_id'         => 10, 
+			'team_id'			=> 11, //id of team members images category
 			'main_menu'         => angularjs_wp_theme::MENU_STRING,
+			'team_pp_carousel'	=> 4, // elements in one carousel slide
 		);
 
 		wp_localize_script( 'inline', 'wp_info', $local_object );

@@ -124,6 +124,14 @@ const MENU_STRING = "header-footer-menu";
                 'force_activation' => true,
                 'force_deactivation' => false
             ),
+            array(
+                'name' => 'WP MEDIA LIBRARY CATEGORIES 1.5.6',
+                'slug' => 'wp-media-library-categories',
+                'source' => get_stylesheet_directory() . '/plugins/wp-media-library-categories.1.5.6.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
         );
 
         

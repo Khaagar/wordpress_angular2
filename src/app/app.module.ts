@@ -27,6 +27,7 @@ import { KnowledgeComponent } from './pages/knowledge/knowledge.component';
 import { TeamComponent } from './pages/team/team.component';
 import { CarouselComponent } from './main/carousel/carousel.component';
 import { ListComponent } from './pages/shared/list/list.component';
+import { TeamListComponent } from './pages/team/team-list/team-list.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { ListComponent } from './pages/shared/list/list.component';
     TeamComponent,
     CarouselComponent,
     ListComponent,
+    TeamListComponent,
   ],
   imports: [
     BrowserModule,
