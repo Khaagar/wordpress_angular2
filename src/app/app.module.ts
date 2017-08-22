@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { WindowRef } from './shared/windowRef';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/forkJoin'
+import 'rxjs/add/observable/forkJoin';
+
+import { CalendarModule } from 'ap-angular2-fullcalendar';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
@@ -28,6 +30,7 @@ import { TeamComponent } from './pages/team/team.component';
 import { CarouselComponent } from './main/carousel/carousel.component';
 import { ListComponent } from './pages/shared/list/list.component';
 import { TeamListComponent } from './pages/team/team-list/team-list.component';
+import { EventsCalendarComponent } from './pages/events/events-calendar/events-calendar.component';
 
 
 @NgModule({
@@ -52,12 +55,14 @@ import { TeamListComponent } from './pages/team/team-list/team-list.component';
     CarouselComponent,
     ListComponent,
     TeamListComponent,
+    EventsCalendarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    Wpng2RoutingModule
+    Wpng2RoutingModule,
+    CalendarModule
   ],
   providers: [
       WindowRef

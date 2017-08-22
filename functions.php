@@ -132,6 +132,14 @@ const MENU_STRING = "header-footer-menu";
                 'force_activation' => true,
                 'force_deactivation' => false
             ),
+            array(
+                'name' => 'GOOGLE CALENDAR EVENTS 3.1.9',
+                'slug' => 'google-calendar-events',
+                'source' => get_stylesheet_directory() . '/plugins/google-calendar-events.3.1.9.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
         );
 
         
