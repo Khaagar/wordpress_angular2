@@ -5922,4 +5922,10 @@ html, body {
 #link-list {
   text-align: center; }
 
+#internal {
+  background-color: orange; }
+
+#external {
+  background-color: blue; }
+
 /*# sourceMappingURL=style.css.map */

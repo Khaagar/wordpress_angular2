@@ -10,12 +10,12 @@ export class EventsCalendarComponent implements OnInit {
 
   internalEvents: Object = {
     googleCalendarId: 'roche.com_l4jj87q7fklrbvkii3v6n8gotc@group.calendar.google.com',
-    className: 'internal-events',
+    className: 'internal',
     color: "orange"
   }
   externalEvents: Object = {
     googleCalendarId: 'roche.com_3ub091a415lgm5t9so9de7gsok@group.calendar.google.com',
-    className: 'external-events',
+    className: 'external',
     color: "blue"
   }
   
@@ -39,9 +39,15 @@ export class EventsCalendarComponent implements OnInit {
             [
               TH.internalEvents,
               TH.externalEvents
-              ]
-          
-    })
+            ],
+
+          eventRender: function eventRender(event, element, view) {
+              return ['all', event.className[0]].indexOf($('#event_selector').val()) >= 0
+          }         
+    });
+    $('#event_selector').on('change', function() {
+      $('#eventsFromSpace').fullCalendar('rerenderEvents');
+    });
   })
   }
 }
