@@ -29,16 +29,23 @@ html,body{
     border: 2px solid;
     border-color:white;
 }
-
-#rect{
-    position: absolute;
-    color:white;
-    font-size:24px;
-    font-weight: normal;
-    width:50%;
-    height: 100%;
-    background-color: rgba(15,100, 140, 0.7);
-    padding:5%;
+.carousel-item 
+{
+    img{
+        
+    }
+    .carusele-caption{
+        position: absolute;
+        color:white;
+        font-size:24px;
+        font-weight: normal;
+        width:50%;
+        height: 100%;
+        background-color: rgba(15,100, 140, 0.7);
+        padding:5%;
+    
+    }
+    
 }
 
 #date{

@@ -20,7 +20,9 @@
       "scripts": [
         "../node_modules/moment/moment",
         "../node_modules/fullcalendar/dist/fullcalendar",
-        "../node_modules/fullcalendar/dist/gcal"
+        "../node_modules/fullcalendar/dist/gcal",
+        "../node_modules/bootstrap/dist/js/bootstrap"
+
        ],
       "environmentSource": "environments/environment.ts",
       "environments": {
