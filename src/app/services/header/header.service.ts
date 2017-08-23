@@ -7,8 +7,8 @@ export class HeaderService {
   private _wpBase = "";
 
   constructor(private winRef: WindowRef, private http: Http) {
-      let wp_info = winRef.nativeWindow;
-      this._wpBase = wp_info.api_menus_url;
+      let wpInfo = winRef.wpData;
+      this._wpBase = wpInfo.apiMenusUrl;
   }
 
 

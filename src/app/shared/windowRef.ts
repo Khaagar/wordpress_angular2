@@ -7,14 +7,14 @@ function _window(): any {
 
 @Injectable()
 export class WindowRef {
-    wp_info: any;
-    calendar_info: any;
-    get nativeWindow(): any {
+    wpInfo: any;
+    calendarInfo: any;
+    get wpData(): any {
         let window = _window();
-        return window.wp_info;
+        return window.wpInfo;
     }
-    get calendarInfo(): any {
+    get calendarData(): any {
         let window = _window();
-        return window.calendar_info;
+        return window.calendarInfo;
     }
 }

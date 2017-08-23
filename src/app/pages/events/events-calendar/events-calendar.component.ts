@@ -32,35 +32,36 @@ export class EventsCalendarComponent implements OnInit {
 
   getItems(calName){
     this.eventsService
-      .getCalendarItemsList(calName)
+      .getCalendarItemsList()
       .subscribe(res => {
-        this.items = res
-        var TH = this;
-        jQuery(document).ready(function(){
-          $("#eventsFromSpace").fullCalendar({
-              header: {
-                left:   'prev',
-                center: 'title',
-                right:  'next'
-              },
-              height: 'auto',
-              defaultDate: new Date(),
-              editable: true,
-              googleCalendarApiKey: 'AIzaSyArQXuswcbAz7NkVt0hiRWMBpkQM-_lKRo',
-              eventSources: 
-                [
-                  TH.items
-                ],
-    
-              eventRender: function eventRender(event, element, view) {
-                  return ['all', event.className[0]].indexOf($('#event_selector').val()) >= 0
-              }         
-        });
-        $('#event_selector').on('change', function() {
-          $('#eventsFromSpace').fullCalendar('rerenderEvents');
-        });
+        this.buildCalendar(res);
       })
-      })
+      
   }
 
+  buildCalendar(res){
+    jQuery(document).ready(function(){
+      $("#eventsFromSpace").fullCalendar({
+          header: {
+            left:   'prev',
+            center: 'title',
+            right:  'next'
+          },
+          height: 'auto',
+          defaultDate: new Date(),
+          editable: false,
+          eventSources: 
+            [
+              res[0],
+              res[1]
+            ],
+          eventRender: function eventRender(event, element, view) {
+              return $("#"+event.category).is(":checked");
+          }         
+    });
+      $('.cal-filter-container input:checkbox').on('change', function() {
+      $('#eventsFromSpace').fullCalendar('rerenderEvents');
+      });
+  })
+  }
 }

@@ -14,10 +14,10 @@ export class TeamListService {
   private elementsCount: number;
   
     constructor(private winRef: WindowRef, private http: Http) {
-        let wp_info = winRef.nativeWindow;
-        this._wpBase = wp_info.api_data_url;
-        this.teamGalery = wp_info.team_id;
-        this.elementsCount = parseInt(wp_info.team_pp_carousel);
+        let wpInfo = winRef.wpData;
+        this._wpBase = wpInfo.apiDataUrl;
+        this.teamGalery = wpInfo.teamId;
+        this.elementsCount = parseInt(wpInfo.teamPpCarousel);
     }
     
     getTeamMembers(): Observable<any>{

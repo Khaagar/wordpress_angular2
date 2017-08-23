@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    let wp_info = this.winRef.nativeWindow;
-    this.site_title = wp_info.site_title;
+    let wpInfo = this.winRef.wpData;
+    this.site_title = wpInfo.site_title;
   }
 
 

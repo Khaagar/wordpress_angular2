@@ -13,9 +13,9 @@ export class CarouselService {
   private carouselGalery = "";
   
     constructor(private winRef: WindowRef, private http: Http) {
-        let wp_info = winRef.nativeWindow;
-        this._wpBase = wp_info.api_data_url;
-        this.carouselGalery = wp_info.carousel_id;
+        let wpInfo = winRef.wpData;
+        this._wpBase = wpInfo.apiDataUrl;
+        this.carouselGalery = wpInfo.carouselId;
     }
     
     getCarouselItems(): Observable<any>{

@@ -23,8 +23,8 @@ export class AppComponent {
   activePage: any;
 
   constructor(private winRef: WindowRef, private menuService: MenuService, private router: Router) { 
-    let wp_info = winRef.nativeWindow;
-    this.menu_name = wp_info.main_menu;
+    let wpInfo = winRef.wpData;
+    this.menu_name = wpInfo.mainMenu;
     menuService.getMenuByName(this.menu_name).subscribe(res => {
       this.menu = res;
 
