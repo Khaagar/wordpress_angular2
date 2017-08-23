@@ -40,7 +40,7 @@ export class EventsCalendarComponent implements OnInit {
   }
 
   buildCalendar(res){
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function($){
       $("#eventsFromSpace").fullCalendar({
           header: {
             left:   'prev',
