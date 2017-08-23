@@ -56,7 +56,7 @@ export class EventsCalendarComponent implements OnInit {
               res[1]
             ],
           eventRender: function eventRender(event, element, view) {
-              return $("#"+event.category).is(":checked");
+              return $("#"+event.className).is(":checked");
           }         
     });
       $('.cal-filter-container input:checkbox').on('change', function() {

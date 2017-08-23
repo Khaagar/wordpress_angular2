@@ -47,7 +47,7 @@ export class EventsService {
         url: url,
         location: entry.location,
         description: entry.description,
-        category: name,
+        className: name,
         color: color
       });
     }
