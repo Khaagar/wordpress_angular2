@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a *ngFor="let item of menu" class="nav-item nav-link" [ngClass]="(activePage=='/'+item.slug?'active':'')" [routerLink]="[item.slug]">{{item.title}}</a>
-      </div>
+        <div class="navbar-nav">
+            <a *ngFor="let item of menu" class="nav-item nav-link" [ngClass]="(activePage=='/'+item.slug?'active':'')" [routerLink]="[item.slug]">{{item.title}}</a>
+        </div>
     </div>
     <a class="navbar-brand pull-right" [routerLink]="['']">MAIN</a>
-  </nav>
+</nav>

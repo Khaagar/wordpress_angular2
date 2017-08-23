@@ -5,10 +5,10 @@
               <div [innerHtml]="item.caption.rendered"></div>
             </div>
             <img class="d-block w-100" src="{{item.source_url}}" alt="{{item.alt_text}}">
-            <div *ngIf="item.alt_text" id="date">
+            <div *ngIf="item.alt_text" class="date">
                 <h1>{{item.date | date:'MMMM d'}}, {{item.alt_text}}</h1>
               </div> 
-            <button id="more" class="btn"> more </button>
+            <button class="more btn"> more </button>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

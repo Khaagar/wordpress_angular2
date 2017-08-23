@@ -6405,37 +6405,24 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px; }
+  margin-bottom: 100px; }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px;
-  /* Vertically center the text there */
+  height: 100px;
   background-color: #f5f5f5; }
   .footer img {
     margin: auto;
     width: 40px;
     height: 40px; }
+  .footer .address, .footer .menu {
+    line-height: 15px;
+    font-size: 12px; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; }
-
-.container {
-  min-height: 100%;
-  padding: 0px; }
-
-#content {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 100px; }
-
-#more {
+.carousel-item .more {
   position: absolute;
   bottom: 15px;
   right: 15px;
@@ -6457,27 +6444,13 @@ html, body {
   background-color: rgba(15, 100, 140, 0.7);
   padding: 5%; }
 
-#date {
+.carousel-item .date {
   position: absolute;
   color: white;
   left: 15px;
   bottom: 15px;
   font-size: 32px;
   font-weight: normal; }
-
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  /* pushes the icon in the middle of the height */
-  height: 0px;
-  z-index: 5;
-  display: inline-block; }
-
-.glyphicon {
-  font-size: 50px; }
-
-#link-list {
-  text-align: center; }
 
 /* $activeColor: #c0392b; //red */
 /* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */

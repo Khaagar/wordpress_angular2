@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { WindowRef } from './shared/windowRef';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { CalendarModule } from 'ap-angular2-fullcalendar';
 
@@ -64,7 +63,6 @@ import { EventsCalendarComponent } from './pages/events/events-calendar/events-c
     HttpModule,
     Wpng2RoutingModule,
     CalendarModule,
-    NgbModule
   ],
   providers: [
       WindowRef

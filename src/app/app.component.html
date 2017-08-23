@@ -1,11 +1,5 @@
+<app-header [menu] = "menu" [activePage] = "activePage"></app-header>
 <div class="container">
-    <header class="container-fluid">
-        <app-header [menu] = "menu" [activePage] = "activePage"></app-header>
-    </header>
-    <div id="content">
-            <router-outlet></router-outlet>
-    </div>
-    <footer class="container-fluid">
-        <app-footer [menu] = "menu" class="footer" ></app-footer>
-    </footer>
+    <router-outlet></router-outlet>
 </div>
+<app-footer [menu] = "menu"></app-footer>
