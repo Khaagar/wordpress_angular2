@@ -9,6 +9,7 @@ import { TeamListService } from '../../../services/team-list/team-list.service';
 })
 export class TeamListComponent implements OnInit {
 
+  listzwei : any;
   list: any;
   rows: Array<number>;
   divider: number = 0;
@@ -25,6 +26,7 @@ export class TeamListComponent implements OnInit {
         this.rows = Array(Math.ceil(res.length / this.divider)).fill(0).map((x,i)=>i);
         this.elements = Array(this.divider).fill(0).map((x,i)=>i);
         this.list = res
+        this.listzwei = [[{a:1},{a:2},{a:3}],[{a:1},{a:2},{a:3}],[{a:1},{a:2},{a:3}]]
       });
   }
 

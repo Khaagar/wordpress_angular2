@@ -18,3 +18,8 @@
         <span class="sr-only">Next</span>
       </a>
 </div>
+
+<div *ngFor="let sublist of listzwei; let i= index" [attr.data-index]="i">
+  <hr>
+  <span *ngFor="let item of sublist">{{item.a}}</span>
+</div>
