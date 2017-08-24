@@ -2,7 +2,7 @@
   <div class="carousel-inner">
     <div class="carousel-item" [ngClass]="(i===0?'active':'')" *ngFor="let row of rows; let i = index" [attr.data-index]="i">
       <div class="row">
-          <div *ngFor="let element of elements" class="col d-block">
+          <div *ngFor="let element of elements" class="col">
               <img src="{{list[element+row*divider]?.source_url}}" alt="{{list[element+row*divider]?.alt_text}}" class="">
               <span class="">{{list[element+row*divider]?.title.rendered}}</span>
             </div>
