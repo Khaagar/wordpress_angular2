@@ -101,14 +101,6 @@ const MENU_STRING = "header-footer-menu";
                 'force_deactivation' => false
             ),
             array(
-                'name' => 'WP Bootstrap Carousel',
-                'slug' => 'wp-bootstrap-carousel',
-                'source' => get_stylesheet_directory() . '/plugins/wp-bootstrap-carousel.0.5.0.zip',
-                'required' => true,
-                'force_activation' => true,
-                'force_deactivation' => false
-            ),
-            array(
                 'name' => 'Display Posts Shortcode',
                 'slug' => 'display-posts-shortcode',
                 'source' => get_stylesheet_directory() . '/plugins/display-posts-shortcode.2.8.0.zip',
@@ -128,14 +120,6 @@ const MENU_STRING = "header-footer-menu";
                 'name' => 'WP MEDIA LIBRARY CATEGORIES 1.5.6',
                 'slug' => 'wp-media-library-categories',
                 'source' => get_stylesheet_directory() . '/plugins/wp-media-library-categories.1.5.6.zip',
-                'required' => true,
-                'force_activation' => true,
-                'force_deactivation' => false
-            ),
-            array(
-                'name' => 'GOOGLE CALENDAR EVENTS 3.1.9',
-                'slug' => 'google-calendar-events',
-                'source' => get_stylesheet_directory() . '/plugins/google-calendar-events.3.1.9.zip',
                 'required' => true,
                 'force_activation' => true,
                 'force_deactivation' => false
