@@ -47,9 +47,10 @@ export class EventsCalendarComponent implements OnInit {
             center: 'title',
             right:  'next'
           },
+          defaultView: 'month',
           height: 'auto',
           defaultDate: new Date(),
-          editable: false,
+          editable: true,
           eventSources: 
             [
               res[0],
@@ -57,7 +58,7 @@ export class EventsCalendarComponent implements OnInit {
             ],
           eventRender: function eventRender(event, element, view) {
               return $("#"+event.className).is(":checked");
-          }         
+          }    
     });
       $('.cal-filter-container input:checkbox').on('change', function() {
       $('#eventsFromSpace').fullCalendar('rerenderEvents');
