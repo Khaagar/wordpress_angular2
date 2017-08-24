@@ -8,7 +8,8 @@ require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 class angularjs_wp_theme {
 
     const MENU_STRING = "header-footer-menu";
-
+    const FRONT_PAGE_CARUSELE_IMG_SIZE = "frontpage-carousele-size";
+    const TEAM_CARUSELE_IMG_SIZE = "team-carousele-size";
     function init() {
 
         add_action('init', array($this, 'register_my_menus'));
@@ -40,8 +41,8 @@ class angularjs_wp_theme {
         $this->register_required_theme_plugins();
         $this->addDefaultSettings();
         
-        add_image_size( 'frontpage-carousele-size', 1110, 500, array( 'center', 'top' ) );        
-        add_image_size( 'team-carousele-size', 200, 200, array( 'center', 'top' ) );
+        add_image_size( self::FRONT_PAGE_CARUSELE_IMG_SIZE, 1110, 500, array( 'center', 'top' ) );        
+        add_image_size( self::TEAM_CARUSELE_IMG_SIZE, 200, 200, array( 'center', 'top' ) );
 
         add_theme_support('post-thumbnails');
         add_post_type_support('page', 'excerpt');

@@ -60,6 +60,8 @@ class ng2_enqueue {
             'teamId' => get_site_option("theme_team_members_galery_category_id"), //id of team members images category
             'teamPpCarousel' => get_site_option("theme_team_members_slide_pp_number"), // elements in one carousel slide
             'mainMenu' => angularjs_wp_theme::MENU_STRING,
+            'carouselImageName' => angularjs_wp_theme::FRONT_PAGE_CARUSELE_IMG_SIZE,
+            'teamImageName' => angularjs_wp_theme::TEAM_CARUSELE_IMG_SIZE,
         );
 
         wp_localize_script('inline', 'wpInfo', $settings);
