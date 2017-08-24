@@ -19,14 +19,10 @@ export class TeamListComponent implements OnInit {
     
    }
   ngOnInit() {
-    this.divider = this.teamListService.getElementsCount();
     this.teamListService
       .getTeamMembers()
       .subscribe(res => {   
-        this.rows = Array(Math.ceil(res.length / this.divider)).fill(0).map((x,i)=>i);
-        this.elements = Array(this.divider).fill(0).map((x,i)=>i);
         this.list = res
-        this.listzwei = [[{a:1},{a:2},{a:3}],[{a:1},{a:2},{a:3}],[{a:1},{a:2},{a:3}]]
       });
   }
 

@@ -1,25 +1,24 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
-  <div class="carousel-inner">
-    <div class="carousel-item" [ngClass]="(i===0?'active':'')" *ngFor="let row of rows; let i = index" [attr.data-index]="i">
-      <div class="row">
-          <div *ngFor="let element of elements" class="col">
-              <img src="{{list[element+row*divider]?.source_url}}" alt="{{list[element+row*divider]?.alt_text}}" class="">
-              <span class="">{{list[element+row*divider]?.title.rendered}}</span>
+    <div class="carousel-inner">
+        <div class="carousel-item" [ngClass]="(i===0?'active':'')" *ngFor="let row of list; let i = index" [attr.data-index]="i">
+             <div class="row">
+                <div *ngFor="let item of row" class="col text-centered">
+                    <div class="card text-center">
+                        <img class="card-img-top" src="{{item.source_url}}" alt="{{item.alt_text}}">
+                        <div class="card-body">
+                            <p class="card-text">{{item.alt_text}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-      </div>
+        </div>
     </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
-      </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-      </a>
-</div>
-
-<div *ngFor="let sublist of listzwei; let i= index" [attr.data-index]="i">
-  <hr>
-  <span *ngFor="let item of sublist">{{item.a}}</span>
+    </a>
 </div>
