@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="address">
                     <p>DANE<br/>
                         Nazwa firmy<br/>
@@ -10,14 +10,14 @@
                         Kraj</p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <ul class="menu">
+            <div class="col-md-8">
+                <ul class="menu text-right">
                     <li *ngFor="let item of menu" >
                         <a [routerLink]="[item.slug]">{{item.title}}</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2 text-right">
                 <img id="google-icon" src="https://assets.materialup.com/uploads/b8f2348a-dfa8-4c0a-b696-112e1c293b95/googleplus-logos-02.png" alt="G+"/>
                 <img id="pdlive-icon" src="https://assets.materialup.com/uploads/b8f2348a-dfa8-4c0a-b696-112e1c293b95/googleplus-logos-02.png" alt="G+"/>
             </div>
