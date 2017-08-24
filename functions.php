@@ -1,5 +1,4 @@
 <?php
-
 require_once dirname(__FILE__) . '/inc/custom-routes.php';
 
 require_once dirname(__FILE__) . '/inc/angular-enqueue.php';
@@ -8,8 +7,9 @@ require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 
 class angularjs_wp_theme {
 
-const MENU_STRING = "header-footer-menu";
-
+    const MENU_STRING = "header-footer-menu";
+    const FRONT_PAGE_CARUSELE_IMG_SIZE = "frontpage-carousele-size";
+    const TEAM_CARUSELE_IMG_SIZE = "team-carousele-size";
     function init() {
 
         add_action('init', array($this, 'register_my_menus'));
@@ -37,9 +37,13 @@ const MENU_STRING = "header-footer-menu";
     /* THEME SUPPORT */
 
     function add_awesome_theme_support() {
-        
+
         $this->register_required_theme_plugins();
+        $this->addDefaultSettings();
         
+        add_image_size( self::FRONT_PAGE_CARUSELE_IMG_SIZE, 1110, 500, array( 'center', 'top' ) );        
+        add_image_size( self::TEAM_CARUSELE_IMG_SIZE, 200, 200, array( 'center', 'top' ) );
+
         add_theme_support('post-thumbnails');
         add_post_type_support('page', 'excerpt');
     }
@@ -101,14 +105,6 @@ const MENU_STRING = "header-footer-menu";
                 'force_deactivation' => false
             ),
             array(
-                'name' => 'WP Bootstrap Carousel',
-                'slug' => 'wp-bootstrap-carousel',
-                'source' => get_stylesheet_directory() . '/plugins/wp-bootstrap-carousel.0.5.0.zip',
-                'required' => true,
-                'force_activation' => true,
-                'force_deactivation' => false
-            ),
-            array(
                 'name' => 'Display Posts Shortcode',
                 'slug' => 'display-posts-shortcode',
                 'source' => get_stylesheet_directory() . '/plugins/display-posts-shortcode.2.8.0.zip',
@@ -132,19 +128,9 @@ const MENU_STRING = "header-footer-menu";
                 'force_activation' => true,
                 'force_deactivation' => false
             ),
-            array(
-                'name' => 'GOOGLE CALENDAR EVENTS 3.1.9',
-                'slug' => 'google-calendar-events',
-                'source' => get_stylesheet_directory() . '/plugins/google-calendar-events.3.1.9.zip',
-                'required' => true,
-                'force_activation' => true,
-                'force_deactivation' => false
-            ),
         );
 
-        
-        
-        
+
         /**
          * Array of configuration settings. Amend each line as needed.
          * If you want the default strings to be available under your own theme domain,
@@ -185,8 +171,85 @@ const MENU_STRING = "header-footer-menu";
         tgmpa($plugins, $config);
     }
 
+    public function addDefaultSettings() {
+        $opt = get_site_option('theme_front_page_galery_category_id');
+        if($opt===false){
+            update_site_option('theme_front_page_galery_category_id', 0);
+        }
+        $opt = get_site_option('theme_team_members_galery_category_id');
+        if($opt===false){
+            update_site_option('theme_team_members_galery_category_id', 0);
+        }
+        $opt = get_site_option('theme_team_members_slide_pp_number');
+        if($opt===false){
+            update_site_option('theme_team_members_slide_pp_number', 4);
+        }
+    }
+
 }
 
 $angularJStheme = new angularjs_wp_theme();
 $angularJStheme->init();
-?>
+
+
+add_action('admin_menu', 'theme_custom_settings_update');
+add_action('admin_menu', 'theme_custom_settings_single');
+
+function theme_custom_settings_single() {
+    add_submenu_page(
+            'options-general.php', 'Theme custom settings', 'Theme settings', 'manage_options', 'theme-custom', 'theme_custom_settings_action'
+    );
+}
+
+function theme_custom_settings_update() {
+
+    if (isset($_POST['submit'])) {
+
+        // verify authentication (nonce)
+        if (!isset($_POST['theme_custom_nonce']))
+            return;
+
+        // verify authentication (nonce)
+        if (!wp_verify_nonce($_POST['theme_custom_nonce'], 'theme_custom_nonce'))
+            return;
+        if (isset($_POST['theme_front_page_galery_category_id'])) {
+            update_site_option('theme_front_page_galery_category_id', $_POST['theme_front_page_galery_category_id']);
+        }
+
+        if (isset($_POST['theme_team_members_galery_category_id'])) {
+            update_site_option('theme_team_members_galery_category_id', $_POST['theme_team_members_galery_category_id']);
+        }
+
+        if (isset($_POST['theme_team_members_slide_pp_number'])) {
+            update_site_option('theme_team_members_slide_pp_number', $_POST['theme_team_members_slide_pp_number']);
+        }
+    }
+}
+function theme_custom_settings_action() {
+    ?>
+    <div class="wrap">
+        <h2>Custom Theme settings</h2>
+        <form method="post">
+            <p>
+                <label>
+                    Front page carousele media category Category
+                    <input type="text" value="<?php echo get_site_option('theme_front_page_galery_category_id');?>" name="theme_front_page_galery_category_id" >
+                    <br/>
+                </label>
+                <label>
+                    Team members carousele media category Category
+                    <input type="text" value="<?php echo get_site_option('theme_team_members_galery_category_id');?>" name="theme_team_members_galery_category_id" >
+                    <br/>
+                </label>
+                <label>
+                    Team members per slide number
+                    <input type="text" value="<?php echo get_site_option('theme_team_members_slide_pp_number');?>" name="theme_team_members_slide_pp_number" >
+                    <br/>
+                </label>
+            </p>
+            <?php wp_nonce_field('theme_custom_nonce', 'theme_custom_nonce'); ?>
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
