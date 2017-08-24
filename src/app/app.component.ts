@@ -20,7 +20,7 @@ export class AppComponent {
 
   menu: any;
   menu_name: "";
-  activePage: any;
+  activePage: any = window.location.pathname;
 
   constructor(private winRef: WindowRef, private menuService: MenuService, private router: Router) { 
     let wpInfo = winRef.wpData;
