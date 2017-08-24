@@ -6423,6 +6423,10 @@ body {
   .footer .menu {
     list-style: none; }
 
+@media (max-width: 767px) {
+  .footer .md-none {
+    display: none; } }
+
 .carousel-item .more {
   position: absolute;
   bottom: 15px;

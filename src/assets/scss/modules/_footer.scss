@@ -30,3 +30,8 @@ body {
         list-style: none;
     }
 }
+@include media-breakpoint-down(sm) { 
+    .footer .md-none {
+        display: none;
+    }
+}

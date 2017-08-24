@@ -46,7 +46,7 @@ class ng2_enqueue {
         self::wpInfoScrpt();
         self::calendarInfoScrpt();
 
-        wp_enqueue_style('ng-style', get_template_directory_uri() . '/dist/assets/css/style.css', array(), 'all');
+        //wp_enqueue_style('ng-style', get_template_directory_uri() . '/dist/assets/css/style.css', array(), 'all');
     }
 
     public static function wpInfoScrpt() {
