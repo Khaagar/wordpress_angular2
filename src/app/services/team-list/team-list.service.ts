@@ -30,14 +30,19 @@ export class TeamListService {
                 var tmp = [];
                 for (var i = 0; i < items.length;) {
                     var row = [];
-                    for (var x = 0; x < this.elementsCount; x++) {
-                        row.push({
-                            source_url: items[i].media_details.sizes[this.teamImageName].source_url,
-                            alt_text: items[i].alt_text
-                        });
+                    for (var x = 0; x < this.elementsCount;) {
+                        if(typeof items[i]!=="undefined" && items[i].media_details.sizes.hasOwnProperty(this.teamImageName)){
+                            row.push({
+                                source_url: items[i].media_details.sizes[this.teamImageName].source_url,
+                                alt_text: items[i].alt_text
+                            });
+                        }
                         i++;
+                        x++;
                     }
-                    tmp.push(row);
+                    if(row.length > 0){
+                        tmp.push(row);                        
+                    }
                 };
                 return tmp;
             })
