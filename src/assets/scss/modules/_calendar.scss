@@ -4,10 +4,10 @@ $darkenColor: darken($activeColor, 20%);
 /* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */
 $background: #3498db;
 
-#internal{
+.internal{
     background-color:orange;
 }
 
-#external{
+.external{
     background-color:blue;
 }

@@ -48,9 +48,10 @@ export class EventsCalendarComponent implements OnInit {
             right:  'next'
           },
           defaultView: 'month',
-          height: 'auto',
+          aspectRatio:1.6,
           defaultDate: new Date(),
-          editable: true,
+          eventLimit:true,
+          editable: false,
           eventSources: 
             [
               res[0],
