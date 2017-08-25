@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer } from '@angular/core';
 import { EventsService } from '../../../services/events/events.service'
+
+import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
 
 @Component({
   selector: 'app-events-calendar',
@@ -9,61 +11,42 @@ import { EventsService } from '../../../services/events/events.service'
 })
 export class EventsCalendarComponent implements OnInit {
 
-  internalEvents: Object = {
-    googleCalendarId: 'roche.com_l4jj87q7fklrbvkii3v6n8gotc@group.calendar.google.com',
-    className: 'internal',
-    color: "orange"
-  }
-  externalEvents: Object = {
-    googleCalendarId: 'roche.com_3ub091a415lgm5t9so9de7gsok@group.calendar.google.com',
-    className: 'external',
-    color: "blue"
-  }
-  items:any;
   
+  view: string = 'month';
+    viewDate: Date = new Date();
+  
+    events: CalendarEvent[];
 
-  constructor(private eventsService: EventsService) { }
+  constructor(private eventsService: EventsService, private rendered: Renderer) { }
 
 
   ngOnInit() {
-    this.getItems('internal');
-    
+    this.getItems();
   }
 
-  getItems(calName){
+  getItems(){
     this.eventsService
       .getCalendarItemsList()
       .subscribe(res => {
-        this.buildCalendar(res);
+        this.events = res[0];
+        res[1].forEach(element => {
+          this.events.push(element);
+        });
       })
       
   }
 
-  buildCalendar(res){
-    jQuery(document).ready(function($){
-      $("#eventsFromSpace").fullCalendar({
-          header: {
-            left:   'prev',
-            center: 'title',
-            right:  'next'
-          },
-          defaultView: 'month',
-          aspectRatio:1.6,
-          defaultDate: new Date(),
-          eventLimit:true,
-          editable: false,
-          eventSources: 
-            [
-              res[0],
-              res[1]
-            ],
-          eventRender: function eventRender(event, element, view) {
-              return $("#"+event.className).is(":checked");
-          }    
-    });
-      $('.cal-filter-container input:checkbox').on('change', function() {
-      $('#eventsFromSpace').fullCalendar('rerenderEvents');
-      });
-  })
+  clickCheck(target,value){
+    let elements = document.getElementsByClassName(target.id);
+    for (var i=0; i<elements.length; i++){
+      if(!value){
+        elements.item(i).setAttribute("hidden", "true");
+      }
+      else{
+        elements.item(i).removeAttribute("hidden");
+      }
+
+
+    }
   }
 }

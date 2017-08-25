@@ -15,12 +15,10 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/fullcalendar/dist/fullcalendar.css"
+        "../node_modules/angular-calendar/dist/css/angular-calendar.css"
       ],
       "scripts": [
         "../node_modules/moment/moment",
-        "../node_modules/fullcalendar/dist/fullcalendar",
-        "../node_modules/fullcalendar/dist/gcal",
         "../node_modules/popper.js/dist/umd/popper",
         "../node_modules/bootstrap/dist/js/bootstrap"
 

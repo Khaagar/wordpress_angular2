@@ -40,15 +40,16 @@ export class EventsService {
       let entry = data[i];
       var url = entry.htmlLink || null;
       events.push({
-        id: entry.id,
         title: entry.summary,
-        start: entry.start.dateTime || entry.start.date, // try timed. will fall back to all-day
-        end: entry.end.dateTime || entry.end.date, // same
-        url: url,
-        location: entry.location,
-        description: entry.description,
-        className: name,
-        color: color
+        start: Date.parse(entry.start.dateTime) || entry.start.date, // try timed. will fall back to all-day
+        end: Date.parse(entry.end.dateTime) || entry.end.date, // same
+        allDay: true,
+        draggable: false,
+        cssClass: name,
+        color: {
+          primary: color,
+          secondary: color
+        }
       });
     }
     return events;
@@ -56,3 +57,10 @@ export class EventsService {
 
 }
 
+// {
+//   "start": new Date(),
+//   "title":"event1",
+//   "color":{
+//     "primary":"blue",
+//     "secondary":"red"
+//   }

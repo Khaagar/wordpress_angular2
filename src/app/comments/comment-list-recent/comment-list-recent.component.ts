@@ -47,7 +47,6 @@ export class CommentListRecentComponent implements OnInit, OnChanges {
       .getPostSlugBy(id)
       .subscribe(res => {
         this.postTitle = res;
-        console.log(this.postTitle)
       });
   }
 

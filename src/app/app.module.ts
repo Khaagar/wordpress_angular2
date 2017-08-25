@@ -6,7 +6,8 @@ import { WindowRef } from './shared/windowRef';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 
-import { CalendarModule } from 'ap-angular2-fullcalendar';
+import { CalendarModule } from 'angular-calendar'
+
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
@@ -62,7 +63,7 @@ import { EventsCalendarComponent } from './pages/events/events-calendar/events-c
     FormsModule,
     HttpModule,
     Wpng2RoutingModule,
-    CalendarModule,
+    CalendarModule.forRoot()
   ],
   providers: [
       WindowRef

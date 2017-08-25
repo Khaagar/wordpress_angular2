@@ -34,7 +34,6 @@ export class CommentListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log('zmiany LISTA: ',changes)
     this.getComments(this.postId,undefined);
   }
 

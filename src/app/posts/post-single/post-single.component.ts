@@ -33,7 +33,6 @@ export class PostSingleComponent implements OnInit {
     this.authorServise
       .getUserById(id)
       .subscribe(res => {
-        console.log(res)
         this.author = res;
       });
   }
