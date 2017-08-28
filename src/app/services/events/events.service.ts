@@ -36,31 +36,44 @@ export class EventsService {
 
   adjustEventData(data,color,name): Object[]{
     let events = [];
+    let image = '';
     for(var i = 0; i<data.length;i++){
       let entry = data[i];
+
       var url = entry.htmlLink || null;
-      events.push({
+      if (entry.attachments){
+        image = entry.attachments[0].fileId;
+      }
+      var tmpEv = {
         title: entry.summary,
-        start: Date.parse(entry.start.dateTime) || entry.start.date, // try timed. will fall back to all-day
-        end: Date.parse(entry.end.dateTime) || entry.end.date, // same
         allDay: true,
         draggable: false,
+        start : null,
+        end: null,
         cssClass: name,
         color: {
           primary: color,
           secondary: color
+        },
+        attachment: image,
+        location:entry.location
+      }
+      if(typeof entry.start.dateTime === "undefined"){
+        tmpEv.start = Date.parse(entry.start.date); // try timed. will fall back to all-day
+        tmpEv.end = Date.parse(entry.end.date) - (24*60*60*1000); // same
+        if(tmpEv.end - 1 < 0){
+          tmpEv.end = null
         }
-      });
+
+      }
+      else{
+        tmpEv.start = Date.parse(entry.start.dateTime);
+        tmpEv.end = Date.parse(entry.end.dateTime);
+      }
+      events.push(tmpEv);
+      image = '';
     }
     return events;
   }
 
 }
-
-// {
-//   "start": new Date(),
-//   "title":"event1",
-//   "color":{
-//     "primary":"blue",
-//     "secondary":"red"
-//   }

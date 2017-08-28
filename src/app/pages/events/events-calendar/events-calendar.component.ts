@@ -16,7 +16,6 @@ export class EventsCalendarComponent implements OnInit {
     viewDate: Date = new Date();
   
     events: CalendarEvent[];
-    blankRow: boolean;
 
   constructor(private eventsService: EventsService, private rendered: Renderer) { 
     
@@ -41,7 +40,6 @@ export class EventsCalendarComponent implements OnInit {
 
   clickCheck(target,value){
     let elements = document.getElementsByClassName(target.id);
-
     for (var i=0; i<elements.length; i++){
       if(!value){
         elements.item(i).setAttribute("hidden", "true");

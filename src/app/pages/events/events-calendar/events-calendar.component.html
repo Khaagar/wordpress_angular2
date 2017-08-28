@@ -12,44 +12,37 @@ Today
         
 </ng-template> -->
 <div class="row calendar-title">
+    <span class="calendar-control-prev-icon" mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view"></span>
     <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    <span class="calendar-control-next-icon" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view"></span>
 </div>
-<div class="row">
-    <div class="col-md-1">
-        <a class="calendar-control-prev"
-        mwlCalendarPreviousView
-        [(viewDate)]="viewDate"
-        [view]="view">
-            <span class="calendar-control-prev-icon"></span>
-        </a>
+
+<mwl-calendar-custom-view id="calendar" [viewDate]="viewDate" [events]="events" (beforeViewRender)="beforeMonthViewRender($event)">
+</mwl-calendar-custom-view>
+
+<div class="cal-filter-container">
+    <div>
+        <input id="internal" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
+        <label for="internal">Internal Events</label>
     </div>
+    <div>
+        <input id="external" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
+        <label for="external">External Events</label>
+    </div>
+</div>
 
-    <div class="col-md-10">
-        <mwl-calendar-custom-view 
-            id="calendar"
-            [viewDate]="viewDate" 
-            [events]="events"
-            (beforeViewRender)="beforeMonthViewRender($event)">>
-        </mwl-calendar-custom-view>
-        <div *ngIf="blankRow" class="blank-row"></div>
-
-        <div class="cal-filter-container">
-            <div>
-                <input id="internal" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
-                <label for="internal">Internal Events</label>
-            </div>
-            <div>
-                <input id="external" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
-                <label for="external">External Events</label>
+<div class="row">
+    <div *ngFor="let event of events; let i= index" class="col-md-6">
+        <div class="card my-3">
+            <div class="{{event.cssClass}} card-body">
+                <img class="card-img" src="http://drive.google.com/uc?export=view&id={{event.attachment}}">
+                <div class="card-img-overlay d-flex align-items-end m-3">
+                    <div>
+                        <h4 class="card-title text-light">{{event.start | date:'MMMM d'}}</h4>
+                        <span class="card-text text-light">{{event.location}}</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-1">
-        <a class="calendar-control-next"
-            mwlCalendarNextView
-            [(viewDate)]="viewDate"
-            [view]="view">
-            <span class="calendar-control-next-icon"></span>
-            </a>
     </div>
 </div>
