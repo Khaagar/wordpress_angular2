@@ -6513,4 +6513,8 @@ body {
   -ms-flex-pack: center;
   justify-content: center; }
 
+.blank-row {
+  width: 100%;
+  height: 101px; }
+
 /*# sourceMappingURL=style.css.map */

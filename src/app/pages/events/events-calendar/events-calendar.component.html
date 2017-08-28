@@ -15,38 +15,41 @@ Today
     <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
 </div>
 <div class="row">
-<div class="col-md-1">
-    <a class="calendar-control-prev"
-    mwlCalendarPreviousView
-    [(viewDate)]="viewDate"
-    [view]="view">
-        <span class="calendar-control-prev-icon"></span>
-    </a>
-</div>
-
-<div class="col-md-10">
-    <mwl-calendar-month-view 
-        [viewDate]="viewDate" 
-        [events]="events">
-    </mwl-calendar-month-view>
-
-    <div class="cal-filter-container roundedOne">
-        <div class="roundedOne">
-            <input id="internal" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
-            <label for="internal">Internal Events</label>
-        </div>
-        <div class="roundedOne">
-            <input id="external" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
-            <label for="external">External Events</label>
-        </div>
-    </div>
-</div>
-<div class="col-md-1">
-    <a class="calendar-control-next"
-        mwlCalendarNextView
+    <div class="col-md-1">
+        <a class="calendar-control-prev"
+        mwlCalendarPreviousView
         [(viewDate)]="viewDate"
         [view]="view">
-        <span class="calendar-control-next-icon"></span>
+            <span class="calendar-control-prev-icon"></span>
         </a>
-</div>
+    </div>
+
+    <div class="col-md-10">
+        <mwl-calendar-custom-view 
+            id="calendar"
+            [viewDate]="viewDate" 
+            [events]="events"
+            (beforeViewRender)="beforeMonthViewRender($event)">>
+        </mwl-calendar-custom-view>
+        <div *ngIf="blankRow" class="blank-row"></div>
+
+        <div class="cal-filter-container">
+            <div>
+                <input id="internal" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
+                <label for="internal">Internal Events</label>
+            </div>
+            <div>
+                <input id="external" checked type="checkbox" value="1" (click)="clickCheck($event.target,$event.target.checked)">
+                <label for="external">External Events</label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <a class="calendar-control-next"
+            mwlCalendarNextView
+            [(viewDate)]="viewDate"
+            [view]="view">
+            <span class="calendar-control-next-icon"></span>
+            </a>
+    </div>
 </div>

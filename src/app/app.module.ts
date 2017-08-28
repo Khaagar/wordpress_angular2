@@ -33,6 +33,8 @@ import { ListComponent } from './pages/shared/list/list.component';
 import { TeamListComponent } from './pages/team/team-list/team-list.component';
 import { EventsCalendarComponent } from './pages/events/events-calendar/events-calendar.component';
 
+import { EventsCalendarCustomViewComponent } from './pages/events/events-calendar/events-calendar-custom-view'
+
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { EventsCalendarComponent } from './pages/events/events-calendar/events-c
     CarouselComponent,
     ListComponent,
     TeamListComponent,
-    EventsCalendarComponent
+    EventsCalendarComponent,
+    EventsCalendarCustomViewComponent
   ],
   imports: [
     BrowserModule,

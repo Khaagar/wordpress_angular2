@@ -12,12 +12,15 @@ import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
 export class EventsCalendarComponent implements OnInit {
 
   
-  view: string = 'month';
+    view: string = 'month';
     viewDate: Date = new Date();
   
     events: CalendarEvent[];
+    blankRow: boolean;
 
-  constructor(private eventsService: EventsService, private rendered: Renderer) { }
+  constructor(private eventsService: EventsService, private rendered: Renderer) { 
+    
+  }
 
 
   ngOnInit() {
@@ -38,15 +41,20 @@ export class EventsCalendarComponent implements OnInit {
 
   clickCheck(target,value){
     let elements = document.getElementsByClassName(target.id);
+
     for (var i=0; i<elements.length; i++){
       if(!value){
         elements.item(i).setAttribute("hidden", "true");
+        
       }
       else{
         elements.item(i).removeAttribute("hidden");
       }
-
-
     }
+  }
+
+
+  beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
+    jQuery('.month-placeholder').height(jQuery('.cal-days > div:first').height()*6);
   }
 }
