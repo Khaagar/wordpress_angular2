@@ -17,7 +17,7 @@ Today
     <span class="calendar-control-next-icon" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view"></span>
 </div>
 
-<mwl-calendar-custom-view id="calendar" [viewDate]="viewDate" [events]="events" (beforeViewRender)="beforeMonthViewRender($event)">
+<mwl-calendar-custom-view id="calendar" [viewDate]="viewDate" [events]="events" (beforeViewRender)="beforeMonthViewRender($event)" (eventClicked)="eventClicked($event)">
 </mwl-calendar-custom-view>
 
 <div class="cal-filter-container">
@@ -33,7 +33,7 @@ Today
 
 <div class="row">
     <div *ngFor="let event of events; let i= index" class="col-md-6">
-        <div class="card my-3">
+        <div class="card my-3" (click)="eventClicked('undefined',event)">
             <div class="{{event.cssClass}} card-body">
                 <img class="card-img" src="http://drive.google.com/uc?export=view&id={{event.attachment}}">
                 <div class="card-img-overlay d-flex align-items-end m-3">
@@ -46,3 +46,9 @@ Today
         </div>
     </div>
 </div>
+
+<button type="button" id="openModalButton" [hidden]="true" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+
+<app-event-modal [event]="clickedEvent" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></app-event-modal>

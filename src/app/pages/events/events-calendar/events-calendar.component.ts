@@ -16,6 +16,7 @@ export class EventsCalendarComponent implements OnInit {
     viewDate: Date = new Date();
   
     events: CalendarEvent[];
+    clickedEvent: CalendarEvent;
 
   constructor(private eventsService: EventsService, private rendered: Renderer) { 
     
@@ -55,4 +56,12 @@ export class EventsCalendarComponent implements OnInit {
   beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
     jQuery('.month-placeholder').height(jQuery('.cal-days > div:first').height()*6);
   }
+
+  eventClicked({ event }: { event: CalendarEvent },event2?): void {
+    console.log(event, event2);
+    this.clickedEvent = event || event2;
+
+    document.getElementById("openModalButton").click();
+  }
+
 }

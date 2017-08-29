@@ -33,7 +33,8 @@ import { ListComponent } from './pages/shared/list/list.component';
 import { TeamListComponent } from './pages/team/team-list/team-list.component';
 import { EventsCalendarComponent } from './pages/events/events-calendar/events-calendar.component';
 
-import { EventsCalendarCustomViewComponent } from './pages/events/events-calendar/events-calendar-custom-view'
+import { EventsCalendarCustomViewComponent } from './pages/events/events-calendar/events-calendar-custom-view';
+import { EventModalComponent } from './pages/events/events-calendar/event-modal/event-modal.component'
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { EventsCalendarCustomViewComponent } from './pages/events/events-calenda
     ListComponent,
     TeamListComponent,
     EventsCalendarComponent,
-    EventsCalendarCustomViewComponent
+    EventsCalendarCustomViewComponent,
+    EventModalComponent
   ],
   imports: [
     BrowserModule,

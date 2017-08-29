@@ -56,6 +56,7 @@ export class EventsService {
           secondary: color
         },
         attachment: image,
+        description: entry.description,
         location:entry.location
       }
       if(typeof entry.start.dateTime === "undefined"){
