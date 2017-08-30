@@ -17,72 +17,85 @@ export class DigitalInitiativesComponent implements OnInit {
     title: 'Item1',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org1'],
     tags: ['tag1','tag2','tag3']
   },
   {
     title: 'Item2',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org2'],
     tags: ['tag2','tag3']
   },
   {
     title: 'Item3',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org3'],
     tags: ['tag1','tag3','tag4']
   },
   {
     title: 'Item4',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org4'],
     tags: ['tag2','tag3']
   },
   {
     title: 'Item5',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org1'],
     tags: ['tag3']
   },
   {
     title: 'Item6',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org3'],
     tags: ['tag1','tag2','tag4']
   },
   {
     title: 'Item7',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org5'],
     tags: ['tag1','tag2','tag3']
   },
   {
     title: 'Item8',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org3','org6'],
     tags: ['tag2','tag3']
   },
   {
     title: 'Item9',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org7'],
     tags: ['tag1','tag3','tag4']
   },
   {
     title: 'Item10',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org2','org8'],
     tags: ['tag2','tag3']
   },
   {
     title: 'Item11',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     email: 'john@doe.com',
+    tagsHidden: ['org2'],
     tags: ['tag3','tag6']
   },
 ];
 adjustedCollection: any = this.sliceCollection(this.tmpItems);
-allTags: any = this.getAllTags(this.tmpItems);
-activeTag:string = 'Choose a tag';
+allTags: any = this.getAllTags(this.tmpItems,'tags');
+allTagsHidden: any = this.getAllTags(this.tmpItems,'tagsHidden');
+activeTag:string = 'all';
+activeTagHidden:string = 'all';
   
     constructor( private pagesService: PagesService, private route: ActivatedRoute ) { }
   
@@ -99,12 +112,12 @@ activeTag:string = 'Choose a tag';
 
     }
 
-    getAllTags(collection){
+    getAllTags(collection,kindOfTag){
       let tmpTags = [];
       for(let i=0; i<collection.length;i++){
         let item = collection[i];
-        for(let j=0;j<item['tags'].length;j++){
-          let tag = item['tags'][j]
+        for(let j=0;j<item[kindOfTag].length;j++){
+          let tag = item[kindOfTag][j]
           if (!tmpTags.find(x=>x===tag)){
             tmpTags.push(tag)
           }
@@ -113,10 +126,15 @@ activeTag:string = 'Choose a tag';
       return tmpTags;
     }
 
-    sliceCollection(collection,tag?){
+    sliceCollection(collection,tag?,tagHidden?){
       if(tag){
         if (tag!='all'){
           collection=collection.filter(x=>x.tags.find(y=>y==tag));
+        }
+      }
+      if(tagHidden){
+        if (tagHidden!='all'){
+          collection=collection.filter(x=>x.tagsHidden.find(y=>y==tagHidden));
         }
       }
       let tmp = []; 
@@ -132,8 +150,13 @@ activeTag:string = 'Choose a tag';
       return tmp;
     }
   
-    selectTag(tag){
-      this.activeTag = tag;
-      this.adjustedCollection = this.sliceCollection(this.tmpItems,tag);
+    selectTag(kindOfTag, tag){
+      if (kindOfTag==='tag'){
+        this.activeTag = tag;
+      } else if (kindOfTag==='tagHidden'){
+        this.activeTagHidden=tag;
+      }
+      
+      this.adjustedCollection = this.sliceCollection(this.tmpItems,this.activeTag,this.activeTagHidden);
     }
   }

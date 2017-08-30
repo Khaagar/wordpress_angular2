@@ -2,22 +2,34 @@
 <div [innerHTML]="page?.content.rendered"></div>
 <app-list></app-list>
 <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{activeTag}}
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTagsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{activeTag=='all' ? 'Choose a tag':activeTag}}
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" (click)="selectTag('all')">Show all</a>
-        <a class="dropdown-item" (click)="selectTag(tag)" *ngFor="let tag of allTags">{{tag}}</a>
+    <div class="dropdown-menu" aria-labelledby="dropdownTagsButton">
+        <a class="dropdown-item" (click)="selectTag('tag','all')">Show all</a>
+        <a class="dropdown-item" (click)="selectTag('tag',tag)" *ngFor="let tag of allTags">{{tag}}</a>
     </div>
 </div>
 
+<div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTagsHiddenButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{activeTagHidden=='all' ? 'Choose a organization':activeTagHidden}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownTagsHiddenButton">
+            <a class="dropdown-item" (click)="selectTag('tagHidden','all')">Show all</a>
+            <a class="dropdown-item" (click)="selectTag('tagHidden',tag)" *ngFor="let tag of allTagsHidden">{{tag}}</a>
+        </div>
+    </div>
+
 
 <div class="row">
+    <h1 *ngIf="adjustedCollection[0].length==0">Sorry! There are no items matching selection</h1>
     <div *ngFor="let column of adjustedCollection; let i=index" class="col-md-4">
         <div *ngFor="let row of column; let j = index" class="card my-3">
             <div class="card-body">
                 <h4 class="card-title">{{row.title}} </h4>
-                <p class="card-text"><small *ngFor="let tag of row.tags" (click)="selectTag(tag)" class="text-muted">{{tag}} </small></p>
+                <p class="card-text"><small *ngFor="let tag of row.tags" (click)="selectTag('tag',tag)" class="text-muted">{{tag}} </small></p>
+                <p class="card-text"><small *ngFor="let tag of row.tagsHidden" (click)="selectTag('tagHidden',tag)" class="text-muted">{{tag}} </small></p>
                 <span class="calendar-control-prev-icon card-control-icon" data-toggle="collapse" [attr.data-target]="'#collapse'+row.iter"
                     aria-expanded="false" [attr.aria-controls]="'collapse'+row.iter">
                     </span>
