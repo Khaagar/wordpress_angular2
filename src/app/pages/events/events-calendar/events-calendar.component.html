@@ -11,10 +11,11 @@ Today
         </div>
         
 </ng-template> -->
-<div class="row calendar-title">
-    <span class="calendar-control-prev-icon" mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view"></span>
-    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
-    <span class="calendar-control-next-icon" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view"></span>
+<div class="row calendar-title text-center">
+
+    <span class="calendar-control-prev-icon col-md-offset-1 col-md-3" mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view"></span>
+    <h3 class="col-md-3">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    <span class="calendar-control-next-icon col-md-3" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view"></span>
 </div>
 
 <mwl-calendar-custom-view id="calendar" [viewDate]="viewDate" [events]="events" (beforeViewRender)="beforeMonthViewRender($event)" (eventClicked)="eventClicked($event)">
@@ -47,7 +48,7 @@ Today
     </div>
 </div>
 
-<button type="button" id="openModalButton" [hidden]="true" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" id="openModalButton" [hidden]="true" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModal">
         Launch demo modal
       </button>
 

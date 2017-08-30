@@ -1,4 +1,4 @@
-<div class="modal-dialog" role="document">
+<div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{event?.title}}</h5>
@@ -8,8 +8,8 @@
       </div>
       <div class="modal-body">
         <img class="card-img" [src]="event?.attachment? 'http://drive.google.com/uc?export=view&id='+event?.attachment :''" alt="image">
-        <p>Start: <strong>{{event?.start | date:'longDate'}}</strong></p>
-        <p>End: <strong>{{event?.end | date:'longDate'}}</strong></p>
+        <p>Start: <strong>{{!isAllDay ? (event?.start | date: 'longDate') : (event?.start | date: 'medium') }}</strong></p>
+        <p>End: <strong>{{!isAllDay ? (event?.end | date: 'longDate') : (event?.end | date: 'medium') }}</strong></p>
         <p>{{event?.description}}</p>
       </div>
       <div class="modal-footer">

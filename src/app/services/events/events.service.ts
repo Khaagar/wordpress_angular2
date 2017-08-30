@@ -60,6 +60,7 @@ export class EventsService {
         location:entry.location
       }
       if(typeof entry.start.dateTime === "undefined"){
+        tmpEv.allDay = false;
         tmpEv.start = Date.parse(entry.start.date); // try timed. will fall back to all-day
         tmpEv.end = Date.parse(entry.end.date) - (24*60*60*1000); // same
         if(tmpEv.end - 1 < 0){
@@ -68,6 +69,7 @@ export class EventsService {
 
       }
       else{
+        tmpEv.allDay = true;
         tmpEv.start = Date.parse(entry.start.dateTime);
         tmpEv.end = Date.parse(entry.end.dateTime);
       }
