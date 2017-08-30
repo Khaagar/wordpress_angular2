@@ -23,4 +23,8 @@ export class CarouselComponent implements OnInit {
         this.items = res;
       });
     }
+
+    moreClicked(){
+        console.log('you clicked me!')
+    }
 }

@@ -1,25 +1,42 @@
-<h1>{{ page?.title.rendered }}</h1>
-<div [innerHTML]="page?.content.rendered"></div>
-<app-list></app-list>
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTagsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{activeTag=='all' ? 'Choose a tag':activeTag}}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownTagsButton">
-        <a class="dropdown-item" (click)="selectTag('tag','all')">Show all</a>
-        <a class="dropdown-item" (click)="selectTag('tag',tag)" *ngFor="let tag of allTags">{{tag}}</a>
+<div class="row my-5">
+    <div class="col-md-5 ml-auto">
+        <h4><u>Digital Biomarkers in prodromal Alzheimer's</u></h4>
+        <p>Delivering a simple and cost-effective screening solution for early AD detection using digital biomarker technology, aimed at patients and HCPs to accelerate recruitment and overcome current detection hurdles in the real-life prodromal setting. Cross functional partnership with Dia, GPS, PD clinical development, PDSi, gRED and pRED.</p>
+    </div>
+    <div class="col-md-5 ml-auto mr-auto">
+        <div class="mt-auto mb-auto" style="width:100%; height:80%; background-color:grey">
+            <p class="display-4">IMAGE PLACEHOLDER</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 ml-auto">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownTagsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{activeTag=='all' ? 'Choose a tag':activeTag}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownTagsButton">
+                <a class="dropdown-item" (click)="selectTag('tag','all')">Show all</a>
+                <a class="dropdown-item" (click)="selectTag('tag',tag)" *ngFor="let tag of allTags">{{tag}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 ml-auto mr-auto">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownTagsHiddenButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{activeTagHidden=='all' ? 'Choose a organization':activeTagHidden}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownTagsHiddenButton">
+                <a class="dropdown-item" (click)="selectTag('tagHidden','all')">Show all</a>
+                <a class="dropdown-item" (click)="selectTag('tagHidden',tag)" *ngFor="let tag of allTagsHidden">{{tag}}</a>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTagsHiddenButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{activeTagHidden=='all' ? 'Choose a organization':activeTagHidden}}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownTagsHiddenButton">
-            <a class="dropdown-item" (click)="selectTag('tagHidden','all')">Show all</a>
-            <a class="dropdown-item" (click)="selectTag('tagHidden',tag)" *ngFor="let tag of allTagsHidden">{{tag}}</a>
-        </div>
-    </div>
+
+
+
 
 
 <div class="row">

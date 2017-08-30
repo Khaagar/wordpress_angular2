@@ -8,14 +8,14 @@
             <div *ngIf="item.alt_text" class="date">
                 <h1>{{item.date | date:'MMMM d'}}, {{item.alt_text}}</h1>
               </div> 
-            <button class="more btn"> more </button>
+            <button class="more btn" (click)="moreClicked()"> more </button>
         </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <a class="carousel-control-prev smaller-control" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <a class="carousel-control-next smaller-control" href="#carouselExampleControls" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
