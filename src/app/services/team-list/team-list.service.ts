@@ -27,10 +27,10 @@ export class TeamListService {
             .get(this._wpBase + `media?filter[category_media]=${this.teamGalery}&per_page=50`)
             .map((res: Response) => {
                 let items = res.json();
-                var tmp = [];
-                for (var i = 0; i < items.length;) {
-                    var row = [];
-                    for (var x = 0; x < this.elementsCount;) {
+                let tmp = [];
+                for (let i = 0; i < items.length;) {
+                    let row = [];
+                    for (let x = 0; x < this.elementsCount;) {
                         if(typeof items[i]!=="undefined" && items[i].media_details.sizes.hasOwnProperty(this.teamImageName)){
                             row.push({
                                 source_url: items[i].media_details.sizes[this.teamImageName].source_url,
