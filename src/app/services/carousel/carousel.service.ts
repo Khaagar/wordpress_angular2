@@ -27,13 +27,18 @@ export class CarouselService {
                 let items = res.json();
                 var tmp = [];
                 for (var i = 0; i < items.length; i++) {
-                    tmp.push({
-                        source_url: items[i].media_details.sizes[this.carouselImageName].source_url,
-                        caption: items[i].caption.rendered,
-                        alt_text: items[i].alt_text,
-                        date: items[i].date
-                    });
+                    if(typeof items[i]!=="undefined" && items[i].media_details.sizes.hasOwnProperty(this.carouselImageName)){
+                        tmp.push({
+                            source_url: items[i].media_details.sizes[this.carouselImageName].source_url,
+                            caption: items[i].caption.rendered,
+                            alt_text: items[i].alt_text,
+                            date: items[i].date
+                        });
+                    }
                 };
+                if(tmp.length == 0){
+                    console.error("there are no images, for gallery");
+                }
                 return tmp;
             }
             )
