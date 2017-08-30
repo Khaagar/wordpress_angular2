@@ -24,7 +24,7 @@ export class TeamListService {
 
     getTeamMembers(): Observable<any> {
         return this.http
-            .get(this._wpBase + `media?categories=${this.teamGalery}&per_page=50`)
+            .get(this._wpBase + `media?filter[category_media]=${this.teamGalery}&per_page=50`)
             .map((res: Response) => {
                 let items = res.json();
                 var tmp = [];

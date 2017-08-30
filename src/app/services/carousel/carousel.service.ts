@@ -22,7 +22,7 @@ export class CarouselService {
 
     getCarouselItems(): Observable<any> {
         return this.http
-            .get(this._wpBase + `media?categories=${this.carouselGalery}`)
+            .get(this._wpBase + `media?filter[category_media]=${this.carouselGalery}&per_page=100`)
             .map((res: Response) => {
                 let items = res.json();
                 var tmp = [];
