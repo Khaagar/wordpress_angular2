@@ -242,9 +242,8 @@ function theme_custom_settings_action() {
         'orderby' => 'name',
         'show_count' => false,
         'walker' => new wpmediacategory_walker_category_filter(),
-        'value'=>'term_id'
+        'value' => 'slug'
     );
-    
     ?>
     <div class="wrap">
         <h2>Custom Theme settings</h2>
@@ -256,7 +255,7 @@ function theme_custom_settings_action() {
                             <label>Front page carousele media category Category</label>
                         </th>
                         <td>
-                            <?php wp_dropdown_categories(array_merge($dropdown_options,['name'=>'theme_front_page_galery_category_id', "id"=>"theme_front_page_galery_category_id", "selected"=>get_site_option('theme_front_page_galery_category_id')])); ?>
+                            <?php wp_dropdown_categories(array_merge($dropdown_options, ['name' => 'theme_front_page_galery_category_id', "id" => "theme_front_page_galery_category_id", "selected" => get_site_option('theme_front_page_galery_category_id')])); ?>
                         </td>
                     </tr>
                     <tr valign="top">
@@ -264,7 +263,7 @@ function theme_custom_settings_action() {
                             <label>Team members carousele media category Category</label>
                         </th>
                         <td>
-                            <?php wp_dropdown_categories(array_merge($dropdown_options,['name'=>'theme_team_members_galery_category_id', "id"=>"theme_team_members_galery_category_id", "selected"=>get_site_option('theme_team_members_galery_category_id')])); ?>
+                            <?php wp_dropdown_categories(array_merge($dropdown_options, ['name' => 'theme_team_members_galery_category_id', "id" => "theme_team_members_galery_category_id", "selected" => get_site_option('theme_team_members_galery_category_id')])); ?>
                         </td>
                     </tr>
                     <tr valign="top">
@@ -277,8 +276,8 @@ function theme_custom_settings_action() {
                     </tr>
                 </tbody>
             </table>
-    <?php wp_nonce_field('theme_custom_nonce', 'theme_custom_nonce'); ?>
-    <?php submit_button(); ?>
+            <?php wp_nonce_field('theme_custom_nonce', 'theme_custom_nonce'); ?>
+            <?php submit_button(); ?>
 
         </form>
     </div>
@@ -292,3 +291,11 @@ function theme_custom_settings_action() {
 add_filter('wpmediacategory_taxonomy', function() {
     return 'category_media';
 }); //requires PHP 5.3 or newer
+
+
+function sb_add_tax_to_api() {
+    $mytax = get_taxonomy('category_media');
+    $mytax->show_in_rest = true;
+}
+
+add_action('init', 'sb_add_tax_to_api', 30);
