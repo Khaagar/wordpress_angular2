@@ -10,6 +10,7 @@ class angularjs_wp_theme {
     const MENU_STRING = "header-footer-menu";
     const FRONT_PAGE_CARUSELE_IMG_SIZE = "frontpage-carousele-size";
     const TEAM_CARUSELE_IMG_SIZE = "team-carousele-size";
+
     function init() {
 
         add_action('init', array($this, 'register_my_menus'));
@@ -40,9 +41,9 @@ class angularjs_wp_theme {
 
         $this->register_required_theme_plugins();
         $this->addDefaultSettings();
-        
-        add_image_size( self::FRONT_PAGE_CARUSELE_IMG_SIZE, 1110, 500, array( 'center', 'top' ) );        
-        add_image_size( self::TEAM_CARUSELE_IMG_SIZE, 200, 200, array( 'center', 'top' ) );
+
+        add_image_size(self::FRONT_PAGE_CARUSELE_IMG_SIZE, 1110, 500, array('center', 'top'));
+        add_image_size(self::TEAM_CARUSELE_IMG_SIZE, 200, 200, array('center', 'top'));
 
         add_theme_support('post-thumbnails');
         add_post_type_support('page', 'excerpt');
@@ -173,15 +174,15 @@ class angularjs_wp_theme {
 
     public function addDefaultSettings() {
         $opt = get_site_option('theme_front_page_galery_category_id');
-        if($opt===false){
+        if ($opt === false) {
             update_site_option('theme_front_page_galery_category_id', 0);
         }
         $opt = get_site_option('theme_team_members_galery_category_id');
-        if($opt===false){
+        if ($opt === false) {
             update_site_option('theme_team_members_galery_category_id', 0);
         }
         $opt = get_site_option('theme_team_members_slide_pp_number');
-        if($opt===false){
+        if ($opt === false) {
             update_site_option('theme_team_members_slide_pp_number', 4);
         }
     }
@@ -206,12 +207,14 @@ function theme_custom_settings_update() {
     if (isset($_POST['submit'])) {
 
         // verify authentication (nonce)
-        if (!isset($_POST['theme_custom_nonce']))
+        if (!isset($_POST['theme_custom_nonce'])) {
             return;
+        }
 
         // verify authentication (nonce)
-        if (!wp_verify_nonce($_POST['theme_custom_nonce'], 'theme_custom_nonce'))
+        if (!wp_verify_nonce($_POST['theme_custom_nonce'], 'theme_custom_nonce')) {
             return;
+        }
         if (isset($_POST['theme_front_page_galery_category_id'])) {
             update_site_option('theme_front_page_galery_category_id', $_POST['theme_front_page_galery_category_id']);
         }
@@ -225,31 +228,67 @@ function theme_custom_settings_update() {
         }
     }
 }
+
 function theme_custom_settings_action() {
+    $taxonomy = 'category';
+    // Add filter to change the default taxonomy
+    $taxonomy = apply_filters('wpmediacategory_taxonomy', $taxonomy);
+    $dropdown_options = array(
+        'taxonomy' => $taxonomy,
+        'name' => $taxonomy,
+        'show_option_all' => __('View all categories', 'wp-media-library-categories'),
+        'hide_empty' => false,
+        'hierarchical' => true,
+        'orderby' => 'name',
+        'show_count' => false,
+        'walker' => new wpmediacategory_walker_category_filter(),
+        'value'=>'term_id'
+    );
+    
     ?>
     <div class="wrap">
         <h2>Custom Theme settings</h2>
         <form method="post">
-            <p>
-                <label>
-                    Front page carousele media category Category
-                    <input type="text" value="<?php echo get_site_option('theme_front_page_galery_category_id');?>" name="theme_front_page_galery_category_id" >
-                    <br/>
-                </label>
-                <label>
-                    Team members carousele media category Category
-                    <input type="text" value="<?php echo get_site_option('theme_team_members_galery_category_id');?>" name="theme_team_members_galery_category_id" >
-                    <br/>
-                </label>
-                <label>
-                    Team members per slide number
-                    <input type="text" value="<?php echo get_site_option('theme_team_members_slide_pp_number');?>" name="theme_team_members_slide_pp_number" >
-                    <br/>
-                </label>
-            </p>
-            <?php wp_nonce_field('theme_custom_nonce', 'theme_custom_nonce'); ?>
-            <?php submit_button(); ?>
+            <table class="form-table">
+                <tbody>
+                    <tr valign="top">
+                        <th scope="row">
+                            <label>Front page carousele media category Category</label>
+                        </th>
+                        <td>
+                            <?php wp_dropdown_categories(array_merge($dropdown_options,['name'=>'theme_front_page_galery_category_id', "id"=>"theme_front_page_galery_category_id", "selected"=>get_site_option('theme_front_page_galery_category_id')])); ?>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">
+                            <label>Team members carousele media category Category</label>
+                        </th>
+                        <td>
+                            <?php wp_dropdown_categories(array_merge($dropdown_options,['name'=>'theme_team_members_galery_category_id', "id"=>"theme_team_members_galery_category_id", "selected"=>get_site_option('theme_team_members_galery_category_id')])); ?>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">
+                            <label>Team members per slide number</label>
+                        </th>
+                        <td>
+                            <input type="text" value="<?php echo get_site_option('theme_team_members_slide_pp_number'); ?>" name="theme_team_members_slide_pp_number" >
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    <?php wp_nonce_field('theme_custom_nonce', 'theme_custom_nonce'); ?>
+    <?php submit_button(); ?>
+
         </form>
     </div>
     <?php
 }
+
+/**
+ * separate media categories from post categories
+ * use a custom category called ‚category_media’ for the categories in the media library
+ */
+add_filter('wpmediacategory_taxonomy', function() {
+    return 'category_media';
+}); //requires PHP 5.3 or newer
