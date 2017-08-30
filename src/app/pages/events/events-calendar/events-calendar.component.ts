@@ -57,8 +57,8 @@ export class EventsCalendarComponent implements OnInit {
     jQuery('.month-placeholder').height(jQuery('.cal-days > div:first').height()*6);
   }
 
-  eventClicked({ event }: { event: CalendarEvent },event2?): void {
-    this.clickedEvent = event || event2;
+  eventClicked({ calendarEvent }: { calendarEvent: CalendarEvent },cardEvent?): void {
+    this.clickedEvent = calendarEvent || cardEvent;
 
     document.getElementById("openModalButton").click();
   }
