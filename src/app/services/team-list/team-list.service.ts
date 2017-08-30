@@ -21,7 +21,10 @@ export class TeamListService {
         this.teamImageName = wpInfo.teamImageName;
         this.elementsCount = parseInt(wpInfo.teamPpCarousel);
     }
-
+    
+    getColumns () {
+        return 12/this.elementsCount
+    }
     getTeamMembers(): Observable<any> {
         return this.http
             .get(this._wpBase + `media?filter[category_media]=${this.teamGalery}&per_page=50`)

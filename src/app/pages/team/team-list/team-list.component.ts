@@ -9,21 +9,20 @@ import { TeamListService } from '../../../services/team-list/team-list.service';
 })
 export class TeamListComponent implements OnInit {
 
-  listzwei : any;
   list: any;
-  rows: Array<number>;
-  divider: number = 0;
-  elements: Array<number>;
-
+  columns : Number;
+  
   constructor(private teamListService: TeamListService) {
     
    }
   ngOnInit() {
+      this.columns = this.teamListService.getColumns();
     this.teamListService
       .getTeamMembers()
       .subscribe(res => {   
         this.list = res
       });
+     
   }
 
 }

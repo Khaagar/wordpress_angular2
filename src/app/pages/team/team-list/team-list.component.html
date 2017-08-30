@@ -2,7 +2,7 @@
     <div class="carousel-inner">
         <div class="carousel-item" [ngClass]="(i===0?'active':'')" *ngFor="let row of list; let i = index" [attr.data-index]="i">
              <div class="row">
-                <div *ngFor="let item of row" class="col text-centered">
+                <div *ngFor="let item of row" class="col-{{columns}} text-centered">
                     <div class="card text-center">
                         <img class="card-img-top" src="{{item.source_url}}" alt="{{item.alt_text}}">
                         <div class="card-body">
