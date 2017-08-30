@@ -37,7 +37,7 @@ export class CarouselService {
                     }
                 };
                 if(tmp.length == 0){
-                    console.error("there are no images, for gallery");
+                    console.error("there are no images, for gallery : " + this.carouselGalery);
                 }
                 return tmp;
             }

@@ -44,6 +44,9 @@ export class TeamListService {
                         tmp.push(row);                        
                     }
                 };
+                if(tmp.length == 0){
+                    console.error("there are no images, for gallery : " + this.teamGalery);
+                }                
                 return tmp;
             })
     }
