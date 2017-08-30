@@ -25,8 +25,8 @@ export class CarouselService {
             .get(this._wpBase + `media?filter[category_media]=${this.carouselGalery}&per_page=100`)
             .map((res: Response) => {
                 let items = res.json();
-                var tmp = [];
-                for (var i = 0; i < items.length; i++) {
+                let tmp = [];
+                for (let i = 0; i < items.length; i++) {
                     if(typeof items[i]!=="undefined" && items[i].media_details.sizes.hasOwnProperty(this.carouselImageName)){
                         tmp.push({
                             source_url: items[i].media_details.sizes[this.carouselImageName].source_url,
