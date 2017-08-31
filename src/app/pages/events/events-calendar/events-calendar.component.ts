@@ -55,12 +55,18 @@ export class EventsCalendarComponent implements OnInit {
 
   beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
     jQuery('.month-placeholder').height(jQuery('.cal-days > div:first').height()*6);
+    
   }
 
   eventClicked({ calendarEvent }: { calendarEvent: CalendarEvent },cardEvent?): void {
     this.clickedEvent = calendarEvent || cardEvent;
-
+    let date = new Date(this.clickedEvent.start);
+    console.log(this.viewDate.getMonth(), date.getMonth())
     document.getElementById("openModalButton").click();
+  }
+
+  checkMonth(date){
+    return new Date(date).getMonth();
   }
 
 }

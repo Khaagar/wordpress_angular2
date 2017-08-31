@@ -32,9 +32,17 @@ Today
     </div>
 </div>
 
+
+<div class="row my-5">
+    <div class="col-md-12">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+        <hr>
+    </div>
+</div>
+
 <div class="row">
     <div *ngFor="let event of events; let i= index" class="col-md-6">
-        <div class="card my-3" (click)="eventClicked('undefined',event)">
+        <div *ngIf="viewDate.getMonth() === checkMonth(event.start) || viewDate.getMonth() === checkMonth(event.end)" class="card my-3" (click)="eventClicked('undefined',event)">
             <div class="{{event.cssClass}} card-body">
                 <img class="card-img" src="http://drive.google.com/uc?export=view&id={{event.attachment}}">
                 <div class="card-img-overlay d-flex align-items-end m-3">
