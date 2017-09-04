@@ -25,6 +25,8 @@ export class HeaderComponent implements OnInit {
 
 
   getMenu(string){
-    this.menuService.getMenuByName(string).subscribe(res => this.menu)
+    this.menuService.getMenuByName(string).subscribe(res => {
+      console.log(this.menu)
+      this.menu = res})
   }
 }

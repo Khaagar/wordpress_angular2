@@ -129,6 +129,14 @@ class angularjs_wp_theme {
                 'force_activation' => true,
                 'force_deactivation' => false
             ),
+            array(
+                'name' => 'THE EVENTS CALENDAR 4.5.11',
+                'slug' => 'the-events-calendar',
+                'source' => get_stylesheet_directory() . '/plugins/the-events-calendar.4.5.11.zip',
+                'required' => true,
+                'force_activation' => true,
+                'force_deactivation' => false
+            ),
         );
 
 

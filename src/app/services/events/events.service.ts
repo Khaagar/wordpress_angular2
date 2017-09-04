@@ -36,13 +36,17 @@ export class EventsService {
 
   adjustEventData(data,color,name): Object[]{
     let events = [];
-    let image = '';
+    let attachments = {
+      header: Object,
+      videos: Array<Object>()
+    }
     for(var i = 0; i<data.length;i++){
       let entry = data[i];
 
       var url = entry.htmlLink || null;
       if (entry.attachments){
-        image = entry.attachments[0].fileId;
+        attachments.header = this.adjustAttachments(entry.attachments,"image");
+        attachments.videos = this.adjustAttachments(entry.attachments,"video");
       }
       var tmpEv = {
         title: entry.summary,
@@ -55,7 +59,7 @@ export class EventsService {
           primary: color,
           secondary: color
         },
-        attachment: image,
+        attachments: attachments,
         description: entry.description,
         location:entry.location
       }
@@ -74,9 +78,27 @@ export class EventsService {
         tmpEv.end = Date.parse(entry.end.dateTime);
       }
       events.push(tmpEv);
-      image = '';
+      attachments = null;
     }
+    console.log(events);
     return events;
+  }
+
+
+  adjustAttachments(collection, type){
+    if(type=="image"){
+      return collection.find(x=>x.title.includes("header"));
+    }
+    if(type=="video"){
+      let tmpCollection = [];
+      collection.forEach(element => {
+        if (element.title.includes("video")){
+          tmpCollection.push(element);
+        }
+        
+      });
+      return tmpCollection;
+    }
   }
 
 }

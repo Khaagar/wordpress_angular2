@@ -35,6 +35,11 @@ export class EventsCalendarComponent implements OnInit {
         res[1].forEach(element => {
           this.events.push(element);
         });
+        this.events=this.events.sort((a,b)=>{
+          if (a.start<b.start) return -1;
+          else if (a.start>b.start) return 1;
+          else return 0;
+        });
       })
       
   }

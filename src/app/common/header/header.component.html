@@ -5,7 +5,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a *ngFor="let item of menu" class="nav-item nav-link" [ngClass]="(activePage=='/'+item.slug?'active':'')" [routerLink]="[item.slug]">{{item.title}}</a>
+                <ul class="navbar-nav">
+                    <ng-template ngFor let-item [ngForOf]="menu">
+                        <li *ngIf="item.children.length==0"  class="nav-item" [ngClass]="(activePage=='/'+item.slug?'active':'')">
+                            <a class="nav-link"  [routerLink]="[item.slug]">{{item.title}}</a>
+                        </li>
+
+                        <li *ngIf="item.children.length>0"  class="nav-item dropdown"  [ngClass]="(activePage=='/'+item.slug?'active':'')">
+                            <a id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" [routerLink]="[item.slug]">{{item.title}}</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <a *ngFor="let subitem of item.children" class="dropdown-item" >{{subitem.title}}</a>
+                            </div>
+                        </li>
+                    </ng-template>
+                </ul>
             </div>
         </div>
         <a class="navbar-brand pull-right" [routerLink]="['']">MAIN</a>
