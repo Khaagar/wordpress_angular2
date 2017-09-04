@@ -1,16 +1,19 @@
-<div class="modal-dialog modal-lg" role="document">
+<div  class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{event?.title}}</h5>
+        <h5 *ngIf="event" class="modal-title" id="exampleModalLabel">{{event.title}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <img class="card-img" [src]="event?.attachments? 'http://drive.google.com/uc?export=view&id='+event?.attachments.header.fileId :''" alt="image">
-        <p>Start: <strong>{{!isAllDay ? (event?.start | date: 'longDate') : (event?.start | date: 'medium') }}</strong></p>
-        <p>End: <strong>{{!isAllDay ? (event?.end | date: 'longDate') : (event?.end | date: 'medium') }}</strong></p>
-        <p>{{event?.description}}</p>
+      <div *ngIf="event" class="modal-body">
+        <img class="card-img" [src]="'http://drive.google.com/uc?export=view&id='+event.attachments.header.fileId" alt="image">
+        <p>Start: <strong>{{!isAllDay ? (event.start | date: 'longDate') : (event.start | date: 'medium') }}</strong></p>
+        <p>End: <strong>{{!isAllDay ? (event.end | date: 'longDate') : (event.end | date: 'medium') }}</strong></p>
+        <p>{{event.description}}</p>
+        <div *ngFor="let video of event.attachments.videos" class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl('https://drive.google.com/file/d/'+video.fileId+'/preview')" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-event-modal',
@@ -9,7 +10,7 @@ export class EventModalComponent implements OnInit, OnChanges {
 
   @Input() event: any;
   isAllDay: boolean = false;
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
