@@ -45,7 +45,7 @@ Today
         <div *ngIf="viewDate.getMonth() === checkMonth(event.start) || viewDate.getMonth() === checkMonth(event.end)" class="col-md-6">
             <div  class="card my-3" (click)="eventClicked('undefined',event)">
                 <div class="{{event.cssClass}} card-body">
-                    <img class="card-img" src="http://drive.google.com/uc?export=view&id={{event.attachment}}">
+                    <img class="card-img" src="http://drive.google.com/uc?export=view&id={{event.attachments.header.fileId}}">
                     <div class="card-img-overlay d-flex align-items-end m-3">
                         <div>
                             <h4 class="card-title text-light">{{event.start | date:'MMMM d'}}</h4>

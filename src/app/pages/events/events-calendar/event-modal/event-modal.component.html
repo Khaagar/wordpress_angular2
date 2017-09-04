@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img class="card-img" [src]="event?.attachments?.header?.fileUrl? 'http://drive.google.com/uc?export=view&id='+event?.attachment :''" alt="image">
+        <img class="card-img" [src]="event?.attachments? 'http://drive.google.com/uc?export=view&id='+event?.attachments.header.fileId :''" alt="image">
         <p>Start: <strong>{{!isAllDay ? (event?.start | date: 'longDate') : (event?.start | date: 'medium') }}</strong></p>
         <p>End: <strong>{{!isAllDay ? (event?.end | date: 'longDate') : (event?.end | date: 'medium') }}</strong></p>
         <p>{{event?.description}}</p>

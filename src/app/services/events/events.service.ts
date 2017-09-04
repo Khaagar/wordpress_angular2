@@ -80,7 +80,6 @@ export class EventsService {
       events.push(tmpEv);
       attachments = null;
     }
-    console.log(events);
     return events;
   }
 

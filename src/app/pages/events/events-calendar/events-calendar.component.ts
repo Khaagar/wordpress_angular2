@@ -66,7 +66,6 @@ export class EventsCalendarComponent implements OnInit {
   eventClicked({ calendarEvent }: { calendarEvent: CalendarEvent },cardEvent?): void {
     this.clickedEvent = calendarEvent || cardEvent;
     let date = new Date(this.clickedEvent.start);
-    console.log(this.viewDate.getMonth(), date.getMonth())
     document.getElementById("openModalButton").click();
   }
 
