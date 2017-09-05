@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Page } from '../page';
 import { PagesService } from '../pages.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-team',
@@ -13,7 +13,7 @@ export class TeamComponent implements OnInit {
 
   page: Page;
   
-    constructor( private pagesService: PagesService, private route: ActivatedRoute ) { }
+    constructor( private pagesService: PagesService ) { }
   
     getPage(slug){
       this.pagesService

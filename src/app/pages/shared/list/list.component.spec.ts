@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { WindowRef } from '../../../shared/windowRef';
+import { HttpModule } from '@angular/http';
 import { ListComponent } from './list.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -8,7 +10,9 @@ describe('ListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
+      imports: [RouterTestingModule, HttpModule],
+      declarations: [ ListComponent ],
+      providers: [WindowRef]
     })
     .compileComponents();
   }));

@@ -1,6 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing'
+import { WindowRef } from '../../shared/windowRef';
+import { HttpModule } from '@angular/http';
 import { MainComponent } from './main.component';
+import { CarouselComponent } from './carousel/carousel.component'
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -8,7 +12,9 @@ describe('MainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainComponent ]
+      imports:[RouterTestingModule,HttpModule],
+      declarations: [ MainComponent, CarouselComponent ],
+      providers: [WindowRef],
     })
     .compileComponents();
   }));

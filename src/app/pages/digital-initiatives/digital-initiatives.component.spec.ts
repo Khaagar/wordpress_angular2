@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { WindowRef } from '../../shared/windowRef';
+import { HttpModule } from '@angular/http';
 import { DigitalInitiativesComponent } from './digital-initiatives.component';
 
 describe('DigitalInitiativesComponent', () => {
@@ -8,7 +10,9 @@ describe('DigitalInitiativesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DigitalInitiativesComponent ]
+      imports: [RouterTestingModule, HttpModule],
+      declarations: [ DigitalInitiativesComponent ],
+      providers: [WindowRef]
     })
     .compileComponents();
   }));

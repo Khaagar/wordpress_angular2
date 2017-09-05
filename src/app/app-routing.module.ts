@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostListComponent } from './posts/post-list/post-list.component';
-import { PostSingleComponent } from './posts/post-single/post-single.component';
-import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
-import { MainComponent } from './main/main.component';
+
 
 //Pages
+import { MainComponent } from './pages/main/main.component';
 import { EventsComponent } from './pages/events/events.component';
 import { HubsComponent } from './pages/hubs/hubs.component';
 import { DigitalInitiativesComponent } from './pages/digital-initiatives/digital-initiatives.component';
@@ -20,14 +18,6 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     
-  },
-  {
-    path: 'posts/:id',
-    component: PostSingleComponent,
-  },
-  {
-    path: 'posts/:id/',
-    component: PostSingleComponent,
   },
   {
     path: 'events/',
@@ -69,14 +59,6 @@ const routes: Routes = [
     path: 'team',
     component: TeamComponent
   },
-  {
-    path: 'posts/:property/:slug',
-    component: PostListComponent
-  },
-  {
-    path: 'posts/:property/:slug/',
-    component: PostListComponent
-  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

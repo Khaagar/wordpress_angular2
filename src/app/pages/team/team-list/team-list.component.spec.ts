@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { WindowRef } from '../../../shared/windowRef';
+import { HttpModule } from '@angular/http';
 import { TeamListComponent } from './team-list.component';
 
 describe('TeamListComponent', () => {
@@ -8,7 +9,9 @@ describe('TeamListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TeamListComponent ]
+      imports: [HttpModule],
+      declarations: [ TeamListComponent ],
+      providers: [WindowRef]
     })
     .compileComponents();
   }));

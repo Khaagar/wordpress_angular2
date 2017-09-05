@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import {WindowRef} from '../../shared/windowRef';
+import {HttpModule} from '@angular/http';
 import { HeaderService } from './header.service';
 
 describe('HeaderService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HeaderService]
+      imports: [HttpModule],
+      providers: [HeaderService,WindowRef]
     });
   });
 

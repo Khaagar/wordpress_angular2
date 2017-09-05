@@ -1,5 +1,8 @@
+import {NO_ERRORS_SCHEMA } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {CalendarModule, CalendarDateFormatter} from 'angular-calendar'
+import {WindowRef } from '../../../shared/windowRef'
+import {HttpModule} from '@angular/http'
 import { EventsCalendarComponent } from './events-calendar.component';
 
 describe('EventsCalendarComponent', () => {
@@ -8,7 +11,10 @@ describe('EventsCalendarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventsCalendarComponent ]
+      imports: [CalendarModule, HttpModule],
+      declarations: [ EventsCalendarComponent ],
+      providers: [WindowRef, CalendarDateFormatter],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

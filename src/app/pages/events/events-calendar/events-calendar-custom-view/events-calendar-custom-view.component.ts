@@ -43,7 +43,7 @@ import { CalendarUtils } from 'angular-calendar/dist/esm/src/providers/calendarU
  */
 @Component({
   selector: 'mwl-calendar-custom-view',
-  templateUrl: `./events-calendar-custom-view.html`
+  templateUrl: `./events-calendar-custom-view.component.html`
 })
 export class EventsCalendarCustomViewComponent
   implements OnChanges, OnInit, OnDestroy {
@@ -196,6 +196,7 @@ export class EventsCalendarCustomViewComponent
       this.refreshSubscription = this.refresh.subscribe(() => {
         this.refreshAll();
         this.cdr.markForCheck();
+        
       });
     }
   }

@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import {WindowRef} from '../../shared/windowRef';
+import {HttpModule} from '@angular/http';
 import { EventsService } from './events.service';
 
 describe('EventsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [EventsService]
+      imports: [HttpModule],
+      providers: [EventsService, WindowRef]
     });
   });
 

@@ -1,12 +1,15 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
+import {WindowRef} from '../shared/windowRef';
+import {HttpModule} from '@angular/http';
 import { PagesService } from './pages.service';
 
 describe('Service: Pages', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PagesService]
+      imports: [HttpModule],
+      providers: [PagesService,WindowRef]
     });
   });
 

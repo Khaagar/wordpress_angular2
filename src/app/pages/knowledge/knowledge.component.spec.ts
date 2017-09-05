@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { WindowRef } from '../../shared/windowRef';
+import { HttpModule } from '@angular/http';
 import { KnowledgeComponent } from './knowledge.component';
 
 describe('KnowledgeComponent', () => {
@@ -8,7 +9,9 @@ describe('KnowledgeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KnowledgeComponent ]
+      imports: [HttpModule],
+      declarations: [ KnowledgeComponent ],
+      providers: [WindowRef]
     })
     .compileComponents();
   }));
