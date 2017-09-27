@@ -1,13 +1,19 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit, Renderer, ElementRef } from '@angular/core';
 import { EventsService } from '../../../services/events/events.service'
+import { CustomDateFormatter } from './custom-date-formatter.provider';
 
-import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
+
+import { CalendarEvent, CalendarMonthViewDay, CalendarDateFormatter } from 'angular-calendar';
 
 @Component({
   selector: 'app-events-calendar',
   templateUrl: './events-calendar.component.html',
   styleUrls: ['./events-calendar.component.scss'],
-  providers: [EventsService]
+  providers: [EventsService, 
+    {
+    provide: CalendarDateFormatter,
+    useClass: CustomDateFormatter
+  }]
 })
 export class EventsCalendarComponent implements OnInit {
 
@@ -57,9 +63,8 @@ export class EventsCalendarComponent implements OnInit {
     }
   }
 
-
   beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
-    jQuery('.month-placeholder').height(jQuery('.cal-days > div:first').height()*6);
+    jQuery('.calendar-placeholder').height(jQuery('.cal-days > div:first').height()*6);
     
   }
 

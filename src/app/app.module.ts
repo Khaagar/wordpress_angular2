@@ -28,6 +28,7 @@ import { EventsCalendarComponent } from './pages/events/events-calendar/events-c
 
 import { EventsCalendarCustomViewComponent } from './pages/events/events-calendar/events-calendar-custom-view/events-calendar-custom-view.component';
 import { EventModalComponent } from './pages/events/events-calendar/event-modal/event-modal.component';
+import { EventCardComponent } from './pages/events/event-card/event-card.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { EventModalComponent } from './pages/events/events-calendar/event-modal/
     TeamListComponent,
     EventsCalendarComponent,
     EventsCalendarCustomViewComponent,
-    EventModalComponent
+    EventModalComponent,
+    EventCardComponent
   ],
   imports: [
     Wpng2RoutingModule,

@@ -1,24 +1,59 @@
-<div class="cal-month-view">
+<ng-template #customCellTemplate let-day="day" let-locale="locale" >
+  
+  <div class="cal-cell-background"></div>
+  <div class="cal-event-placeholder">
+    <div *ngIf="day.events.length>0" class="cal-event" [ngClass]="day.events[0].cssClass"></div>
+  </div>
+
+  <div class="cal-day-number text-center">
+    <span>{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+  </div>
+
+  <!-- <div *ngIf="day.events.length>0" class="cal-event cal-day-event-circle ">
+    </div> -->
+</ng-template>
+
+
+<ng-template #customHeaderTemplate>     
+  <div id="row-header" class="cal-cell-row d-flex justify-content-center cal-header">
+    <!--cal-cell -->
+    <div 
+      class="row-child-header cal-cell" 
+      *ngFor="let day of columnHeaders" 
+      [class.cal-past]="day.isPast" 
+      [class.cal-today]="day.isToday"
+      [class.cal-future]="day.isFuture"
+      [class.cal-weekend]="day.isWeekend"
+      [ngClass]="day.cssClass">
+        {{ day.date | calendarDate:'monthViewColumnHeader':locale }}
+    </div>
+  </div>
+</ng-template>
+
+
+<div class="calendar-custom-view">
     <mwl-calendar-month-view-header
       [days]="columnHeaders"
       [locale]="locale"
-      [customTemplate]="headerTemplate">
+      [customTemplate]="customHeaderTemplate">
     </mwl-calendar-month-view-header>
-    <div class="month-placeholder">
-      <div class="cal-days">
+    <div class="calendar-placeholder">
+       <div class="cal-days"> <!--cal-days -->
         <div *ngFor="let rowIndex of view.rowOffsets">
-          <div class="cal-cell-row">
+          <div [id]="'row-'+rowIndex" class="cal-cell-row d-flex justify-content-center"> <!--cal-cell-row -->
             <mwl-calendar-month-cell
               *ngFor="let day of view.days | slice : rowIndex : rowIndex + (view.totalDaysVisibleInWeek)"
               [class.cal-drag-over]="day.dragOver"
-              [ngClass]="day?.cssClass"
+              [ngClass]="day?.cssClass+' row-child-'+rowIndex"
+              class="cal-day"
               [day]="day"
+              (click)="day.events.length>0 && eventClicked.emit({calendarEvent: day.events[0]})"
               [openDay]="openDay"
               [locale]="locale"
               [tooltipPlacement]="tooltipPlacement"
               [tooltipAppendToBody]="tooltipAppendToBody"
               [tooltipTemplate]="tooltipTemplate"
-              [customTemplate]="cellTemplate"
+              [customTemplate]="customCellTemplate"
               (click)="dayClicked.emit({day: day})"
               (highlightDay)="toggleDayHighlight($event.event, true)"
               (unhighlightDay)="toggleDayHighlight($event.event, false)"

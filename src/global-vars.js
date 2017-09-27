@@ -23,6 +23,3 @@ var calendarInfo = [{
         "calendarColor":"blue",
         "calendarName":"external"
     }]
-
-    var viewDate = new Date();
-    var events = [];

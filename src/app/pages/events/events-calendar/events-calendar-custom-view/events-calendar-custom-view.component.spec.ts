@@ -3,22 +3,19 @@ import { CalendarModule} from 'angular-calendar';
 import { CalendarUtils } from 'angular-calendar/dist/esm/src/providers/calendarUtils.provider';
 import { CalendarDateFormatter } from 'angular-calendar/dist/esm/src/providers/calendarDateFormatter.provider';
 import { EventsCalendarCustomViewComponent } from './events-calendar-custom-view.component';
-import {
-  CalendarEvent,
-  WeekDay,
-  MonthView,
-  MonthViewDay
-} from 'calendar-utils';
 
+// var viewDate = new Date();
+// var events = [];
 describe('EventsCalendarCustomViewComponent', () => {
   let component: EventsCalendarCustomViewComponent;
+  let utils: CalendarUtils;
   let fixture: ComponentFixture<EventsCalendarCustomViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CalendarModule, ],
+      imports: [CalendarModule ],
       declarations: [ EventsCalendarCustomViewComponent ],
-      providers:[CalendarUtils,CalendarDateFormatter]
+      providers:[CalendarDateFormatter, CalendarUtils]
     })
     .compileComponents();
   }));
@@ -26,11 +23,13 @@ describe('EventsCalendarCustomViewComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EventsCalendarCustomViewComponent);
     component = fixture.componentInstance;
+    component.refreshBody();
+    console.log('in before',component.view);
     fixture.detectChanges();
   });
 
   it('should be created', () => {
-    console.log(component.view);
+    console.log('in it',component.view);
     expect(component).toBeTruthy();
   });
 });

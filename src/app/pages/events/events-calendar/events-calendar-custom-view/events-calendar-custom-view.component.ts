@@ -196,7 +196,6 @@ export class EventsCalendarCustomViewComponent
       this.refreshSubscription = this.refresh.subscribe(() => {
         this.refreshAll();
         this.cdr.markForCheck();
-        
       });
     }
   }
@@ -270,6 +269,8 @@ export class EventsCalendarCustomViewComponent
   }
 
   private refreshHeader(): void {
+    //this.columnHeaders = ['Mon','Tue','Wed','Thu','Fry','Sat','Sun']
+
     this.columnHeaders = this.utils.getWeekViewHeader({
       viewDate: this.viewDate,
       weekStartsOn: this.weekStartsOn,
@@ -279,7 +280,7 @@ export class EventsCalendarCustomViewComponent
     this.emitBeforeViewRender();
   }
 
-  private refreshBody(): void {
+  public refreshBody(): void {
     this.view = this.utils.getMonthView({
       events: this.events,
       viewDate: this.viewDate,

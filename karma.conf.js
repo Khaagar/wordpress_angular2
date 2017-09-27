@@ -17,6 +17,10 @@ module.exports = function (config) {
     },
     files: [
       { pattern: './src/test.ts', watched: false },
+      "./node_modules/jquery/dist/jquery.js",
+      "./node_modules/moment/moment.js",
+      "./node_modules/popper.js/dist/umd/popper.js",
+      "./node_modules/bootstrap/dist/js/bootstrap.js",
       "./src/global-vars.js"
     ],
     preprocessors: {

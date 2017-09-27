@@ -53,3 +53,161 @@ $background: #3498db;
         bottom:20px;
     }
 }
+
+//css from original calendar
+
+.calendar-custom-view .cal-header {
+    text-align: center;
+    font-weight: bolder; }
+  
+  .cal-cell-background{
+      width:100%;
+      height: 100%;
+      transform: scale(0.7);
+  }
+
+  .calendar-custom-view #row-header:hover  .row-child-header{
+    background-color: #fafafa; }
+  .calendar-custom-view #row-0:hover:not(.cal-event) .row-child-0{
+    background-color: #fafafa; } 
+  .calendar-custom-view #row-7:hover:not(.cal-event) .row-child-7{
+    background-color: #fafafa; }
+  .calendar-custom-view #row-14:hover:not(.cal-event) .row-child-14{
+    background-color: #fafafa; }
+  .calendar-custom-view #row-21:hover:not(.cal-event) .row-child-21{
+    background-color: #fafafa; }
+  .calendar-custom-view #row-28:hover:not(.cal-event) .row-child-28 {
+    background-color: #fafafa; }
+  .calendar-custom-view #row-35:hover:not(.cal-event) .row-child-35{
+    background-color: #fafafa; }
+
+  .calendar-custom-view .cal-header .cal-cell {
+    width:50px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap; }
+  
+  .calendar-custom-view .cal-cell-row .cal-cell:hover {
+      .cal-cell-background{
+        border-radius: 50%;
+        background-color: #ededed !important; }
+      .cal-event{
+          transform: scale(1);
+          transition: 0.1s ease;
+      }
+    }
+  
+
+  .calendar-custom-view .cal-days {
+    border: 0; }
+  
+  .calendar-custom-view .cal-cell {
+    float: right;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -js-display: flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch; }
+  
+  .calendar-custom-view .cal-day-cell {
+    position: relative;
+    width:50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .calendar-custom-view .cal-day-number {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    font-size: 1.2em;
+    font-weight: 400;
+    opacity: 0.5;
+    float: right;}
+  
+  .calendar-custom-view .cal-events {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin: 3px;
+    line-height: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -js-display: flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+
+    .cal-event-placeholder{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+    }
+    .calendar-custom-view .cal-event {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: auto;
+        transform: scale(0.7);
+        z-index: 0;
+        transition: 0.1s ease;
+    }
+  
+//   .calendar-custom-view .cal-day-cell.cal-in-month.cal-has-events {
+//     cursor: pointer; }
+  .calendar-custom-view{
+      .external{
+        background-color: orange;
+      }
+      .internal{
+          background-color:dodgerblue;
+      }
+  }
+  .calendar-custom-view .cal-day-cell.cal-out-month .cal-day-number {
+    opacity: 0.1;
+    cursor: default; }
+  
+  .calendar-custom-view .cal-day-cell.cal-weekend .cal-day-number {
+    color: darkred; }
+  
+  .calendar-custom-view .cal-day-cell.cal-today {
+    background-color: #e8fde7 !important; }
+  
+  .calendar-custom-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: 1.9em; }
+  
+  .calendar-custom-view .cal-day-cell.cal-drag-over {
+    background-color: #e0e0e0 !important; }
+  
+  .calendar-custom-view .cal-open-day-events {
+    padding: 15px;
+    color: white;
+    background-color: #555;
+    -webkit-box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.5); }
+  
+  .calendar-custom-view .cal-open-day-events .cal-event {
+    position: relative;
+    top: 2px; }
+  
+  .calendar-custom-view .cal-event-title {
+    color: white; }
+  
+  .calendar-custom-view .cal-out-month .cal-day-badge,
+  .calendar-custom-view .cal-out-month .cal-event {
+    opacity: 0.3; }

@@ -11,6 +11,7 @@ import 'rxjs/add/observable/forkJoin';
 export class EventsService {
 
   private _calendarInfo= [];
+  
 
   constructor(private winRef: WindowRef, private http: Http) {
       this._calendarInfo = winRef.calendarData;
@@ -38,15 +39,15 @@ export class EventsService {
 
   adjustEventData(data,color,name): Object[]{
     let events = [];
-    let attachments = {
-      header: Object,
-      videos: Array<Object>()
-    }
-    for(var i = 0; i<data.length;i++){
-      let entry = data[i];
 
+    for(let i = 0; i<data.length;i++){
+      let entry = data[i];
+      let attachments = {
+        header: Object,
+        videos: Array<Object>()
+      }
       var url = entry.htmlLink || null;
-      if (entry.attachments){
+      if (entry.attachments.length>0){
         attachments.header = this.adjustAttachments(entry.attachments,"image");
         attachments.videos = this.adjustAttachments(entry.attachments,"video");
       }
@@ -80,7 +81,6 @@ export class EventsService {
         tmpEv.end = Date.parse(entry.end.dateTime);
       }
       events.push(tmpEv);
-      attachments = null;
     }
     return events;
   }

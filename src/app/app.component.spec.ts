@@ -7,17 +7,19 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { WindowRef } from './shared/windowRef';
 import {HttpModule } from '@angular/http'
 import { AppComponent } from './app.component';
-
+import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 describe('App: Wpng2Test', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule,RouterModule.forRoot([]),RouterTestingModule.withRoutes([])],
+      imports: [HttpModule,RouterTestingModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        FooterComponent
       ],
-      schemas: [NO_ERRORS_SCHEMA],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' },WindowRef]
+      providers: [WindowRef]
     });
   });
 

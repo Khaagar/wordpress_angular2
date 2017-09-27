@@ -1,3 +1,28 @@
-/*plac3eholder*/
+/*placeholder*/
 
+.my-header{
+    min-height:0px !important;
+}
 
+#navContainer{
+    box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.10);
+}
+
+.nav-link:hover{
+    color:rgb(0,153,255) !important;
+}
+
+.active > .nav-link {
+    color:rgb(12, 126, 195) !important;
+}
+
+.navbar-inner {
+    min-height: 0px;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 75px;
+    height: 75px;
+    padding-top: 0;
+}

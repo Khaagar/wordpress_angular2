@@ -6395,7 +6395,29 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
-/*plac3eholder*/
+/*placeholder*/
+.my-header {
+  min-height: 0px !important; }
+
+#navContainer {
+  -webkit-box-shadow: 0px 10px 5px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 5px -5px rgba(0, 0, 0, 0.1); }
+
+.nav-link:hover {
+  color: #0099ff !important; }
+
+.active > .nav-link {
+  color: #0c7ec3 !important; }
+
+.navbar-inner {
+  min-height: 0px; }
+
+.navbar-brand,
+.navbar-nav li a {
+  line-height: 75px;
+  height: 75px;
+  padding-top: 0; }
+
 /*plac3eholder*/
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -6505,6 +6527,162 @@ body {
     left: 20px;
     bottom: 20px; }
 
+.calendar-custom-view .cal-header {
+  text-align: center;
+  font-weight: bolder; }
+
+.cal-cell-background {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7); }
+
+.calendar-custom-view #row-header:hover .row-child-header {
+  background-color: #fafafa; }
+
+.calendar-custom-view #row-0:hover:not(.cal-event) .row-child-0 {
+  background-color: #fafafa; }
+
+.calendar-custom-view #row-7:hover:not(.cal-event) .row-child-7 {
+  background-color: #fafafa; }
+
+.calendar-custom-view #row-14:hover:not(.cal-event) .row-child-14 {
+  background-color: #fafafa; }
+
+.calendar-custom-view #row-21:hover:not(.cal-event) .row-child-21 {
+  background-color: #fafafa; }
+
+.calendar-custom-view #row-28:hover:not(.cal-event) .row-child-28 {
+  background-color: #fafafa; }
+
+.calendar-custom-view #row-35:hover:not(.cal-event) .row-child-35 {
+  background-color: #fafafa; }
+
+.calendar-custom-view .cal-header .cal-cell {
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap; }
+
+.calendar-custom-view .cal-cell-row .cal-cell:hover .cal-cell-background {
+  border-radius: 50%;
+  background-color: #ededed !important; }
+
+.calendar-custom-view .cal-cell-row .cal-cell:hover .cal-event {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease; }
+
+.calendar-custom-view .cal-days {
+  border: 0; }
+
+.calendar-custom-view .cal-cell {
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+
+.calendar-custom-view .cal-day-cell {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  line-height: 50px; }
+
+.calendar-custom-view .cal-day-number {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: 0.5;
+  float: right; }
+
+.calendar-custom-view .cal-events {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  margin: 3px;
+  line-height: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.cal-event-placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.calendar-custom-view .cal-event {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
+  z-index: 0;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease; }
+
+.calendar-custom-view .external {
+  background-color: orange; }
+
+.calendar-custom-view .internal {
+  background-color: dodgerblue; }
+
+.calendar-custom-view .cal-day-cell.cal-out-month .cal-day-number {
+  opacity: 0.1;
+  cursor: default; }
+
+.calendar-custom-view .cal-day-cell.cal-weekend .cal-day-number {
+  color: darkred; }
+
+.calendar-custom-view .cal-day-cell.cal-today {
+  background-color: #e8fde7 !important; }
+
+.calendar-custom-view .cal-day-cell.cal-today .cal-day-number {
+  font-size: 1.9em; }
+
+.calendar-custom-view .cal-day-cell.cal-drag-over {
+  background-color: #e0e0e0 !important; }
+
+.calendar-custom-view .cal-open-day-events {
+  padding: 15px;
+  color: white;
+  background-color: #555;
+  -webkit-box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.5); }
+
+.calendar-custom-view .cal-open-day-events .cal-event {
+  position: relative;
+  top: 2px; }
+
+.calendar-custom-view .cal-event-title {
+  color: white; }
+
+.calendar-custom-view .cal-out-month .cal-day-badge,
+.calendar-custom-view .cal-out-month .cal-event {
+  opacity: 0.3; }
+
 .card-control-icon {
   width: 30px;
   -webkit-transform: rotate(270deg);
@@ -6523,5 +6701,61 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
+
+/* placeholder */
+.event-card-container {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  color: white; }
+
+.event-card-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.event-card-content {
+  position: absolute;
+  bottom: 0; }
+
+.event-card-title {
+  background-color: rgba(102, 102, 102, 0.75);
+  margin: 0;
+  padding: 1rem; }
+
+.event-card-description-container {
+  background-color: rgba(102, 102, 102, 0.75);
+  margin: 0;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease; }
+
+.event-card-description {
+  padding: 0.7rem;
+  max-height: 75%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.event-card-button {
+  max-height: 25%;
+  text-align: right; }
+
+.event-card-link {
+  color: #00ccff;
+  padding: 5px; }
+
+.event-card-container:hover .event-card-description-container {
+  height: 134px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease; }
+
+.event-card-container:hover .event-card-image {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3); }
 
 /*# sourceMappingURL=style.css.map */
